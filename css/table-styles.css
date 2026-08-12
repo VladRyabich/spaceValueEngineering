@@ -1,6 +1,46 @@
 /* ------------------------------GLOBAL------------------------------- */
 @media screen and (min-width: 768px) {
-	.container {
-		max-width: 768px;
-	}
+  .container {
+    max-width: 768px;
+  }
+
+  /* ------------------- MAIN ------------------- */
+  /* Hero slider */
+
+  .comparison {
+    width: 100%;
+    max-width: 900px;
+
+    aspect-ratio: 4 / 3;
+  }
+
+  .label {
+    top: 20px;
+
+    padding: 7px 11px;
+
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .label-before {
+    left: 16px;
+  }
+
+  .label-after {
+    right: 16px;
+  }
+
+  .divider {
+    width: 2px;
+  }
+
+  .handle {
+    width: 52px;
+    height: 52px;
+  }
+
+  .arrow {
+    font-size: 25px;
+  }
 }
