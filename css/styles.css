@@ -53,53 +53,222 @@ ul {
 /* ------------------- MAIN ------------------- */
 
 /* Hero section */
+.page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+   COMPARISON
+========================================= */
+
 .comparison {
   position: relative;
+
   overflow: hidden;
 
-  width: 100%;
+  cursor: ew-resize;
 
-  aspect-ratio: 4 / 3;
+  user-select: none;
+  -webkit-user-select: none;
 
-  border-radius: 2px;
+  /*
+        Дуже важливо для touch.
+
+        Телефон не буде сприймати
+        рух пальця як scroll.
+    */
 
   touch-action: none;
 }
 
-.comparison img {
+/* =========================================
+   IMAGES
+========================================= */
+
+.comparison__image {
   position: absolute;
+
+  inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
+  pointer-events: none;
 }
 
-.label {
-  top: 12px;
+/* AFTER */
 
-  padding: 5px 8px;
-
-  font-size: 9px;
-
-  letter-spacing: 0.8px;
+.comparison__label--after {
+    position: relative;
+    top: 0;
+    right: 0;
+  z-index: 1;
 }
 
-.label-before {
-  left: 10px;
+/* BEFORE */
+
+.comparison__image--before {
+  z-index: 2;
+
+  /*
+        Початкова позиція = 50%
+    */
+
+  clip-path: inset(0 50% 0 0);
 }
 
-.label-after {
-  right: 10px;
+/* =========================================
+   LABELS
+========================================= */
+
+.comparison__label {
+  position: absolute;
+
+  z-index: 10;
+
+  background: #063f2f;
+
+  color: #d29a42;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  pointer-events: none;
 }
 
-.divider {
+/* =========================================
+   VERTICAL LINE
+========================================= */
+
+.comparison__line {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+
+  z-index: 15;
+
   width: 2px;
+
+  transform: translateX(-50%);
+
+  background: #ffffff;
+
+  pointer-events: none;
+
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
 }
 
-.handle {
-  width: 44px;
-  height: 44px;
+/* =========================================
+   ROUND HANDLE
+========================================= */
+
+.comparison__handle {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  z-index: 20;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #063f2f;
+
+  border: 2px solid #ffffff;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+
+  pointer-events: none;
+
+  /*
+        Робимо handle трохи
+        виразнішим під час drag
+    */
+
+  transition: transform 0.12s ease;
 }
 
-.arrow {
-  font-size: 22px;
+/* =========================================
+   LEFT GOLD CHEVRON
+========================================= */
+
+.comparison__handle::before {
+  content: "";
+
+  position: absolute;
+
+  /*
+        Центруємо
+    */
+
+  top: 50%;
+  left: 50%;
+
+  width: 17px;
+  height: 30px;
+
+  transform: translate(-12px, -50%);
+
+  background: #d29a42;
+
+  /*
+        Малюємо товсту стрілку:
+
+             >
+    */
+
+  clip-path: polygon(0 0, 35% 0, 100% 50%, 35% 100%, 0 100%, 65% 50%);
+}
+
+/* =========================================
+   RIGHT GOLD CHEVRON
+========================================= */
+
+.comparison__handle::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 17px;
+  height: 30px;
+
+  transform: translate(0, -50%);
+
+  background: #d29a42;
+
+  /*
+        Та сама стрілка,
+        але дивиться вправо
+    */
+
+  clip-path: polygon(0 0, 35% 0, 100% 50%, 35% 100%, 0 100%, 65% 50%);
+}
+
+/* =========================================
+   DRAGGING
+========================================= */
+
+.comparison.is-dragging {
+  cursor: grabbing;
+}
+
+.comparison.is-dragging .comparison__handle {
+  transform: translate(-50%, -50%) scale(1.06);
 }

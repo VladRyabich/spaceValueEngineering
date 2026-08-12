@@ -67,36 +67,53 @@
         <div class="container hero_con">
           <!-- Hero slider -->
           <div class="comparison" id="comparison">
-            
-            <img 
-              src="./images/after-house.png" 
-              alt="After" 
-              class="after-image" />
+            <!-- AFTER -->
 
-            <img
-              src="/images/before-house.png"
-              alt="Before"
-              class="before-image"
-              id="beforeImage"
-            />
-
-            <!-- LABELS -->
-
-            <span class="label label-before">BEFORE</span>
-
-            <span class="label label-after">AFTER</span>
-
-            <!-- DIVIDER -->
-
-            <div class="divider" id="divider"></div>
-
-            <!-- HANDLE -->
-
-            <div class="handle" id="handle">
-              <span class="arrow">‹</span>
-
-              <span class="arrow">›</span>
+            <div>
+              <img
+                src="/images/after-house.png"
+                alt="After"
+                class="comparison__image comparison__image--after"
+              />
+              <div class="comparison__label comparison__label--after">
+                AFTER
+              </div>
             </div>
+
+            <!-- BEFORE -->
+
+            <div>
+              <img
+                src="/images/before-house.png"
+                alt="Before"
+                class="comparison__image comparison__image--before"
+                id="beforeImage"
+              />
+
+              <!-- =========================
+                 LABELS
+            ========================== -->
+
+              <div class="comparison__label comparison__label--before">
+                BEFORE
+              </div>
+            </div>
+
+            <!-- =========================
+                 VERTICAL LINE
+            ========================== -->
+
+            <div class="comparison__line" id="comparisonLine"></div>
+
+            <!-- =========================
+                 ROUND HANDLE
+            ========================== -->
+
+            <div
+              class="comparison__handle"
+              id="comparisonHandle"
+              aria-label="Перетягнути порівняння"
+            ></div>
           </div>
 
           <h1 class="hero_title">SpaceValueEngineering</h1>
