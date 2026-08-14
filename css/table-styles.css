@@ -132,4 +132,14 @@
   .hero_title {
     font-size: 48px;
   }
+
+  /* MODAL */
+  .modal {
+    width: 768px;
+  }
+
+  .modal_close_btn {
+    top: 0px;
+    right: 3vw;
+  }
 }

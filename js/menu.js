@@ -23,3 +23,25 @@
     });
   });
 })();
+
+const backdrop = document.querySelector("[data-modal]");
+const modal = document.querySelector(".modal");
+const closeBtn = document.querySelector("[data-modal-close]");
+
+const tabletMedia = window.matchMedia("(min-width: 768px)");
+
+function moveCloseButton(e) {
+  if (e.matches) {
+    // Планшет — переносимо кнопку в modal
+    modal.prepend(closeBtn);
+  } else {
+    // Мобільна — повертаємо кнопку в backdrop
+    backdrop.prepend(closeBtn);
+  }
+}
+
+// Виконуємо одразу при завантаженні
+moveCloseButton(tabletMedia);
+
+// Слідкуємо за зміною розміру
+tabletMedia.addEventListener("change", moveCloseButton);
