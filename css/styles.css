@@ -1,6 +1,18 @@
 :root {
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* ------------------- GLOBAL ------------------- */
 html {
   scroll-behavior: smooth;
@@ -28,6 +40,11 @@ p {
   padding: 0;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 ul {
   margin: 0;
   padding-left: 0;
@@ -36,6 +53,7 @@ ul {
 }
 
 .container {
+  width: 100%;
   max-width: 320px;
 
   margin: 0 auto;
@@ -43,48 +61,102 @@ ul {
 }
 
 /* ------------------- HEADER ------------------- */
+.header {
+  border-bottom: 2px solid gold;
+}
 .header_con {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  max-width: 90vw;
+
+  padding: 8px 16px;
+}
+
+.header_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header_logo_icon {
+  fill: #d29a42;
+}
+
+.nav_list,
+.touch_btn {
+  display: none;
 }
 
 /* ------------------- MAIN ------------------- */
 
 /* Hero section */
-.page {
-  width: 100%;
-  min-height: 100vh;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
+.hero-section-wrapper {
+  position: relative;
 }
 
 /* =========================================
-   COMPARISON
+   SLIDER
 ========================================= */
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.comparison-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Або ваша ширина контенту */
+  margin: 0 auto 20px; /* Центрування по горизонталі */
+}
 
 .comparison {
   position: relative;
-
-  overflow: hidden;
-
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4 / 2;
   cursor: ew-resize;
-
   user-select: none;
   -webkit-user-select: none;
-
-  /*
-        Дуже важливо для touch.
-
-        Телефон не буде сприймати
-        рух пальця як scroll.
-    */
-
   touch-action: none;
+
+  /* Градієнтне зникнення лише для слайдера */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 95%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 95%
+  );
+}
+
+/* =========================================
+   WRAPPERS (ШАРИ ПІД КАРТИНКИ + ТЕКСТ)
+========================================= */
+
+.comparison_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.comparison_wrapper:first-of-type {
+  z-index: 1; /* Шар AFTER (нижній) */
+}
+
+.comparison_wrapper:last-of-type {
+  z-index: 5; /* Шар BEFORE (верхній) */
 }
 
 /* =========================================
@@ -93,56 +165,52 @@ ul {
 
 .comparison__image {
   position: absolute;
-
-  inset: 0;
-
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-
+  display: block;
   object-fit: cover;
-
   pointer-events: none;
 }
 
 /* AFTER */
-
-.comparison__label--after {
-  position: relative;
-  top: 0;
-  right: 0;
+.comparison__image--after {
   z-index: 1;
 }
 
 /* BEFORE */
-
 .comparison__image--before {
   z-index: 2;
-
-  /*
-        Початкова позиція = 50%
-    */
-
-  clip-path: inset(0 50% 0 0);
+  clip-path: inset(0 50% 0 0); /* JS продовжує змінювати цей параметр */
 }
 
 /* =========================================
-   LABELS
+   LABELS (БЕЙДЖІ)
 ========================================= */
 
 .comparison__label {
   position: absolute;
-
-  z-index: 10;
-
+  top: 12px;
+  padding: 5px 8px;
   background: #063f2f;
-
   color: #d29a42;
-
+  font-size: 9px;
   font-weight: 700;
-
-  letter-spacing: 1.5px;
-
+  letter-spacing: 0.8px;
   pointer-events: none;
+}
+
+/* Ховається під фото Before (z-index 1 < 2) */
+.comparison__label--after {
+  right: 10px;
+  z-index: 1;
+}
+
+/* Лежить на Before, але нижче лінії повзунка */
+.comparison__label--before {
+  left: 10px;
+  z-index: 3;
 }
 
 /* =========================================
@@ -151,116 +219,576 @@ ul {
 
 .comparison__line {
   position: absolute;
-
   top: 0;
   bottom: 0;
-
   left: 50%;
-
-  z-index: 15;
-
   width: 2px;
-
-  transform: translateX(-50%);
-
+  z-index: 15; /* Вище за бейдж Before */
   background: #ffffff;
-
+  transform: translateX(-50%);
   pointer-events: none;
-
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
 }
 
 /* =========================================
-   ROUND HANDLE
+   HANDLE
 ========================================= */
 
 .comparison__handle {
   position: absolute;
-
-  width: 50px;
-  height: 50px;
-
   top: 50%;
   left: 50%;
-
-  z-index: 20;
-
+  width: 24px;
+  height: 24px;
+  z-index: 20; /* Найвищий шар керування */
   transform: translate(-50%, -50%);
-
   border-radius: 50%;
-
   background: #063f2f;
-
   border: 2px solid #ffffff;
-
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
-
   pointer-events: none;
-
-  /*
-        Робимо handle трохи
-        виразнішим під час drag
-    */
-
-  transition: transform 0.12s ease;
 }
 
 /* =========================================
-   LEFT GOLD CHEVRON
+   ARROWS
 ========================================= */
 
-.comparison__handle::before {
+.comparison__handle::before,
+.comparison__handle::after {
   content: "";
-
   position: absolute;
-
-  /*
-        Центруємо
-    */
-
   top: 50%;
   left: 50%;
-
-  width: 12px;
-  height: 20px;
-
-  transform: translate(-16px, -50%);
-
+  width: 6px;
+  height: 12px;
   background: #d29a42;
+}
 
+/* LEFT ARROW */
+.comparison__handle::before {
+  transform: translate(-8px, -50%);
   clip-path: polygon(100% 0, 65% 0, 0 50%, 65% 100%, 100% 100%, 35% 50%);
 }
 
-/* =========================================
-   RIGHT GOLD CHEVRON
-========================================= */
-
+/* RIGHT ARROW */
 .comparison__handle::after {
-  content: "";
-
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  width: 12px;
-  height: 20px;
-
-  transform: translate(5px, -50%);
-
-  background: #d29a42;
-
+  transform: translate(2px, -50%);
   clip-path: polygon(0 0, 35% 0, 100% 50%, 35% 100%, 0 100%, 65% 50%);
 }
 
 /* =========================================
-   DRAGGING
+   BOTTOM ICON (ЛОГОТИП ПО СЕРЕДИНІ)
 ========================================= */
 
-.comparison.is-dragging {
-  cursor: grabbing;
+.comparions_wrapper_icon {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(
+    -50%,
+    30%
+  ); /* Рівно половина іконки на картинці, половина на фоні під нею */
+
+  width: 64px;
+  height: 64px;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 
-.comparison.is-dragging .comparison__handle {
-  transform: translate(-50%, -50%) scale(1.06);
+.comparions_icon {
+  display: block;
+}
+
+.hero_title {
+  text-align: center;
+  font-size: 24px;
+}
+
+/* MENU */
+.mobile_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  background-color: white;
+}
+
+.mobile_menu.is_open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile_menu_container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  padding-top: 72px;
+  padding-bottom: 40px;
+}
+
+.mobile_menu_close_btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 24px;
+  width: 24px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background-color: var(--border-color);
+
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile_menu_close_btn:hover,
+.mobile_menu_close_btn:focus {
+  border: none;
+
+  background-color: var(--hover-icon);
+}
+
+.mobile_menu_close_icon {
+  fill: var(--dark-bg-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile_menu_close_btn:hover .mobile_menu_close_icon,
+.mobile_menu_close_btn:focus .mobile_menu_close_icon {
+  fill: var(--main-bg-color);
+}
+
+.mobile_nav_list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile_nav_link {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+
+  color: var(--secondary-color-text);
+}
+
+.mobile_nav_link.active {
+  color: var(--hover-color-text);
+}
+
+.mobile_nav {
+  margin-bottom: auto;
+}
+
+.mobile_address_list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobile_address_link {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  font-style: normal;
+
+  color: var(--main-color-text);
+}
+
+.mobile_address_item.active .mobile_address_link {
+  color: var(--logo-color);
+}
+
+/* MODAL */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(46, 47, 66, 0.5);
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is_open {
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+  pointer-events: auto;
+}
+
+.backdrop:not(.is_open) .modal {
+  transform: translate(-50%, -100%) scale(0.5);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 288px;
+  min-height: 584px;
+
+  padding: 72px 16px 24px;
+  border-radius: 4px;
+
+  box-shadow:
+    0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+
+  background-color: var(--modal-bg-color);
+
+  transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_close_button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  height: 24px;
+  width: 24px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  cursor: pointer;
+  background-color: var(--border-color);
+
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_close_button:hover,
+.modal_close_button:focus {
+  border: none;
+
+  background-color: var(--hover-icon);
+}
+
+.modal_close-button:hover .modal_close_icon,
+.modal_close-button:focus .modal_close_icon {
+  fill: var(--main-bg-color);
+}
+
+.modal_close_icon {
+  fill: var(--dark-bg-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_title {
+  font-weight: 500;
+  text-align: center;
+
+  margin-bottom: 16px;
+
+  color: var(--secondary-color-text);
+}
+
+.modal_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal_input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-bottom: 8px;
+}
+
+.modal_input-wrapper:nth-child(4) {
+  margin-bottom: 16px;
+}
+
+.modal_input {
+  width: 256px;
+  height: 40px;
+
+  padding-left: 38px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+
+  outline: transparent;
+  transition:
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_input._error {
+  border-color: red;
+}
+
+.textarea_input {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+
+  min-height: 120px;
+
+  padding: 8px 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+
+  resize: none;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_input:focus,
+.textarea_input:focus {
+  border-color: var(--overlay-bg-color);
+}
+
+.modal_input:focus + .modal_icon {
+  fill: var(--overlay-bg-color);
+}
+
+.modal_input::placeholder,
+.modal_label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.modal_input_icon_wrapper {
+  position: relative;
+}
+
+.modal_icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+
+  fill: var(--dark-bg-color);
+
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_checkbox {
+  margin-bottom: 24px;
+}
+
+.checkbox_label {
+  display: flex;
+  align-items: center;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+
+  color: var(--border-features-color);
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 16px;
+  height: 16px;
+
+  margin-right: 8px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+
+  fill: transparent;
+  transition:
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox_input:checked + .checkbox {
+  border-color: var(--overlay-bg-color);
+  background-color: var(--btn-bg-color);
+}
+
+.checkbox_icon {
+  fill: transparent;
+  opacity: 0;
+  transition:
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox_input:checked + .checkbox .checkbox_icon {
+  fill: var(--secondary-bg-color);
+  opacity: 1;
+}
+
+.checkbox_link {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+
+  color: var(--overlay-bg-color);
+}
+
+.checkbox_link:hover,
+.checkbox_link:focus {
+  color: var(--hover-color-text);
+}
+
+.modal_submit-button {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  width: 169px;
+  height: 56px;
+
+  margin: 0 auto;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+
+  background-color: var(--btn-bg-color);
+  color: var(--white-color-text);
+
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_submit-button:hover,
+.modal_submit-button:focus {
+  background-color: var(--hover-icon);
+}
+
+/* Підсвічування помилок валідації */
+.form_input._error,
+.form_textarea._error {
+  border-color: #ff3b30 !important;
+  box-shadow: 0 0 5px rgba(255, 59, 48, 0.5);
+}
+
+.checkbox_field._error .checkbox-label::before {
+  border-color: #ff3b30;
+  box-shadow: 0 0 5px rgba(255, 59, 48, 0.5);
+}
+
+/* Оверлей завантаження (Sending state) */
+.modal_form {
+  position: relative;
+}
+
+.modal_form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85) url("../images/loading.gif") center /
+    50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.modal_form._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Стилізація кнопки завантаження файлу та прев'ю */
+.file_wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.file_input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.file_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background-color: #2196f3;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.file_button:hover {
+  background-color: #188ce8;
+}
+
+.file_preview {
+  display: inline-block;
+  max-width: 80px;
+  margin-top: 10px;
+}
+
+.file_preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
 }

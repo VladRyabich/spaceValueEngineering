@@ -1,9 +1,20 @@
 /* ------------------------------GLOBAL------------------------------- */
 @media screen and (min-width: 1158px) {
-  .container {
-    max-width: 1158px;
+  /* HEADER */
+  .header {
+    margin-top: 8px;
+  }
 
-    padding: 0 15px;
+  .nav_list {
+    gap: 24px;
+  }
+
+  .nav_item_link {
+    padding: 8px 16px;
+  }
+
+  .header_con {
+    border: 2px solid gold;
   }
 
   .section {
@@ -12,39 +23,82 @@
 
   /* ------------------- MAIN ------------------- */
   /* Hero slider */
+  .container,
+  .hero_con {
+    max-width: 1158px;
+
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .hero_con {
+    padding: 0;
+  }
+  /* =========================================
+   SLIDER
+========================================= */
 
   .comparison {
-    width: min(1100px, 95vw);
+    max-width: none;
+
     aspect-ratio: 16 / 9;
   }
 
-  .label {
+  /* =========================================
+   LABELS
+========================================= */
+
+  .comparison__label {
     top: 27px;
 
     padding: 8px 13px;
 
     font-size: 13px;
+
     letter-spacing: 1.5px;
   }
 
-  .label-before {
+  .comparison__label--before {
     left: 20px;
   }
 
-  .label-after {
+  .comparison__label--after {
     right: 20px;
   }
 
-  .divider {
+  /* =========================================
+   LINE
+========================================= */
+
+  .comparison__line {
     width: 3px;
   }
 
-  .handle {
+  /* =========================================
+   HANDLE
+========================================= */
+
+  .comparison__handle {
     width: 56px;
     height: 56px;
   }
 
-  .arrow {
-    font-size: 28px;
+  /* =========================================
+   ARROWS
+========================================= */
+
+  .comparison__handle::before,
+  .comparison__handle::after {
+    width: 16px;
+    height: 28px;
+  }
+
+  .comparions_wrapper_icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero_title {
+    font-size: 72px;
   }
 }

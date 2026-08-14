@@ -1,46 +1,135 @@
 /* ------------------------------GLOBAL------------------------------- */
 @media screen and (min-width: 768px) {
-  .container {
+  .container,
+  .hero_con {
     max-width: 768px;
+
+    margin: 0 auto;
+  }
+
+  .hero_con {
+    border-left: 2px solid gold;
+    border-right: 2px solid gold;
+  }
+
+  /* HEADER */
+  .header {
+    border: none;
+  }
+
+  .header_con {
+    border: 2px solid gold;
+    margin-top: 6px;
+  }
+
+  .nav_list,
+  .touch_btn {
+    display: flex;
+  }
+
+  .touch_btn {
+    padding: 8px 16px;
+    border: 2px solid gold;
+
+    background: none;
+  }
+
+  .nav_list {
+    gap: 8px;
+  }
+
+  .nav_item_link {
+    padding: 4px 8px;
+  }
+
+  .burger_btn {
+    display: none;
+  }
+
+  /* MOBILE MENU */
+  .mobile_menu {
+    display: none;
   }
 
   /* ------------------- MAIN ------------------- */
   /* Hero slider */
 
+  /* =========================================
+   SLIDER
+========================================= */
+
   .comparison {
     width: 100%;
+
     max-width: 900px;
 
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 2;
   }
 
-  .label {
+  /* =========================================
+   LABELS
+========================================= */
+
+  .comparison__label {
     top: 20px;
 
     padding: 7px 11px;
 
     font-size: 11px;
+
     letter-spacing: 1.2px;
   }
 
-  .label-before {
+  .comparison__label--before {
     left: 16px;
   }
 
-  .label-after {
+  .comparison__label--after {
     right: 16px;
   }
 
-  .divider {
+  /* =========================================
+   LINE
+========================================= */
+
+  .comparison__line {
     width: 2px;
   }
 
-  .handle {
-    width: 52px;
-    height: 52px;
+  /* =========================================
+   HANDLE
+========================================= */
+
+  .comparison__handle {
+    width: 50px;
+    height: 50px;
   }
 
-  .arrow {
-    font-size: 25px;
+  /* =========================================
+   ARROWS
+========================================= */
+
+  .comparison__handle::before,
+  .comparison__handle::after {
+    width: 14px;
+    height: 25px;
+  }
+
+  .comparison__handle::before {
+    transform: translate(-18px, -50%);
+  }
+
+  .comparison__handle::after {
+    transform: translate(4px, -50%);
+  }
+
+  /* HERO LOGO */
+  .comparions_wrapper_icon {
+    width: 82px;
+    height: 82px;
+  }
+
+  .hero_title {
+    font-size: 48px;
   }
 }

@@ -1,0 +1,31 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  id="logo-icon"
+  viewBox="0 0 512 512"
+  fill="none"
+>
+  <path
+    d="M80 440V230L256 94L432 230V440"
+    stroke="currentColor"
+    stroke-width="24"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    stroke-miterlimit="10"
+  />
+  <path
+    d="M168 162L344 298V440"
+    stroke="currentColor"
+    stroke-width="24"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    stroke-miterlimit="10"
+  />
+  <path
+    d="M344 162L168 298V440"
+    stroke="currentColor"
+    stroke-width="24"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    stroke-miterlimit="10"
+  />
+</svg>
