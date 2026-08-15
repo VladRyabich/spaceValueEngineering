@@ -114,4 +114,14 @@
     width: 128px;
     height: 128px;
   }
+
+  /* Why Us section */
+
+  .whyUs_item {
+    gap: 12px;
+  }
+
+  .whyUs_text {
+    font-size: 24px;
+  }
 }

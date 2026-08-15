@@ -163,4 +163,50 @@
   .enhance_item:last-child {
     padding: 24px;
   }
+
+  /* Why Us section */
+  .whyUs_con_wrap {
+	gap: 12px;
+  }
+
+  .divider {
+	width: 40%;
+  }
+
+  .whyUs_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    column-gap: 24px;
+    row-gap: 8px;
+	align-items: center;
+
+    margin: 24px 0;
+	padding: 0 24px;
+  }
+
+  .whyUs_item {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .whyUs_item_icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+  }
+
+  .whyUs_text {
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .card {
+	padding: 12px 24px;
+  }
 }

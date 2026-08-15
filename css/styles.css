@@ -916,3 +916,102 @@ ul {
   font-weight: 500;
   font-size: clamp(18px, 3vw, 32px);
 }
+
+/* Why Us section */
+.whyUs_con_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 18px;
+  border: 2px solid gold;
+}
+
+.why_us_title {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.divider {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+/* Лінія */
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: #d5aa43;
+  box-shadow: 0 0 3px rgba(213, 170, 67, 0.5);
+}
+
+/* Ромб */
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #e3b945;
+  border: 1px solid #f1cf69;
+}
+
+.whyUs_list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin: 24px 0;
+}
+
+.whyUs_item {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.whyUs_item_icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.whyUs_text {
+  font-size: clamp(14px, 3vw, 18px);
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  padding: 6px 12px;
+  border: 2px solid gold;
+}
+
+.whyUs_card_icon {
+}
+
+.wrapper_card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subtitle_whyUs_card {
+  font-size: clamp(13px, 3vw, 32px);
+}
+
+.text_whyUs_card {
+  font-size: clamp(12px, 3vw, 24px);
+}
