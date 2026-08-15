@@ -68,7 +68,6 @@ ul {
 }
 
 .container {
-  width: 100%;
   max-width: 320px;
 
   margin: 0 auto;
@@ -444,6 +443,16 @@ ul {
 }
 
 .mobile_address_list {
+}
+
+/* Enhance section */
+.enhance_title {
+  font-size: clamp(24px, 4vw, 64px);
+  text-align: center;
+  margin: 24px;
+}
+
+.enhance_list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -858,4 +867,34 @@ ul {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
+
+  padding: 24px 0;
+  border: 2px solid;
+  margin-bottom: 24px;
+}
+
+.enhance_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 42px 24px;
+  border-bottom: 2px solid;
+}
+
+.enhance_item:last-child {
+  border: none;
+  padding-bottom: 0;
+}
+
+.enhance_svg {
+  width: 64px;
+  height: 64px;
+}
+
+.enhance_subtitle {
+    text-align: center;
+    font-weight: 500;
+    font-size: clamp(18px, 3vw, 32px);
 }
