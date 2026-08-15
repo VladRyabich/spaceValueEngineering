@@ -142,7 +142,7 @@
     top: 0px;
     right: 3vw;
   }
-  
+
   .container {
     max-width: 768px;
   }
@@ -151,16 +151,16 @@
   .enhance_list {
     flex-direction: row;
     justify-content: center;
-	gap: 0;
+    gap: 0;
   }
 
   .enhance_item {
     padding: 24px;
-	border-bottom: none;
-	border-right: 2px solid;
+    border-bottom: none;
+    border-right: 2px solid;
   }
 
   .enhance_item:last-child {
-	padding: 24px;
+    padding: 24px;
   }
 }
