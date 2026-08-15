@@ -1,4 +1,12 @@
 :root {
+  --gold-gradient: linear-gradient(
+    180deg,
+    #ebd59b 0%,
+    #dfba73 55%,
+    #c49a4f 100%
+  );
+  /* Акуратна мікро-тінь для ефекту втисненого тиснення */
+  --gold-shadow: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.65));
 }
 
 *,
@@ -11,6 +19,22 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+
+  background-color: #0a311e;
+  background-image: 
+    /* Радіальний віньєт-градієнт: світліший смарагдовий у центрі, майже чорний по краях */
+    radial-gradient(
+      ellipse at center,
+      rgba(14, 45, 29, 0.4) 0%,
+      rgba(3, 10, 6, 0.95) 100%
+    ),
+    url("bg-texture.jpg");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  /* background-attachment: fixed; за бажанням, щоб фон не рухався при скролі */
+  color: #c5a059; /* золотистий відтінок тексту */
+  font-family: "Cinzel", serif; /* або будь-який інший антикварний шрифт */
 }
 
 /* ------------------- GLOBAL ------------------- */
@@ -50,6 +74,25 @@ h3,
 h4,
 h5,
 h6,
+p,
+span,
+a,
+li,
+button,
+label {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: var(--gold-shadow);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
   margin: 0;
   padding: 0;
@@ -74,9 +117,12 @@ ul {
   padding: 0 16px;
 }
 
+.section {
+  margin-bottom: 24px;
+}
+
 /* ------------------- HEADER ------------------- */
 .header {
-  border-bottom: 2px solid gold;
 }
 .header_con {
   display: flex;
@@ -105,8 +151,12 @@ ul {
 }
 
 .burger_btn {
-  border: 2px solid gold;
+  border: 2px solid #c5a059;
   background: none;
+}
+
+.burger_icon {
+  fill: #c5a059;
 }
 
 /* ------------------- MAIN ------------------- */
@@ -212,12 +262,14 @@ ul {
   position: absolute;
   top: 12px;
   padding: 5px 8px;
-  background: #063f2f;
+  background: #041c15;
   color: #d29a42;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.8px;
   pointer-events: none;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.91);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.88);
 }
 
 /* Ховається під фото Before (z-index 1 < 2) */
@@ -261,7 +313,7 @@ ul {
   z-index: 20; /* Найвищий шар керування */
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: #063f2f;
+  background: #041c15;
   border: 2px solid #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
   pointer-events: none;
@@ -339,7 +391,7 @@ ul {
   visibility: hidden;
   pointer-events: none;
 
-  background-color: white;
+  background-color: #0a311e;
 }
 
 .mobile_menu.is_open {
@@ -384,8 +436,7 @@ ul {
   height: 24px;
   width: 24px;
 
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
+  border: 2px solid #c5a059;
 
   cursor: pointer;
 
@@ -404,14 +455,17 @@ ul {
 }
 
 .mobile_menu_close_icon {
-  fill: var(--dark-bg-color);
+  width: 24px;
+  height: 24px;
+
+  fill: #c5a059;
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile_menu_close_btn:hover .mobile_menu_close_icon,
 .mobile_menu_close_btn:focus .mobile_menu_close_icon {
-  fill: var(--main-bg-color);
+  fill: #c5a059;
 }
 
 .mobile_nav_list {
@@ -443,6 +497,10 @@ ul {
 }
 
 .mobile_address_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 
 /* Enhance section */
@@ -450,13 +508,6 @@ ul {
   font-size: clamp(24px, 4vw, 64px);
   text-align: center;
   margin: 24px;
-}
-
-.enhance_list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
 }
 
 .mobile_address_link {
@@ -486,7 +537,7 @@ ul {
   width: 100%;
   height: 100%;
 
-  background-color: rgba(46, 47, 66, 0.9);
+  background-color: #063f2fed;
 
   visibility: hidden;
   opacity: 0;
@@ -540,7 +591,7 @@ ul {
   height: 24px;
   width: 24px;
 
-  border: 1px solid gold;
+  border: 1px solid;
 
   cursor: pointer;
   background: none;
@@ -792,12 +843,14 @@ ul {
   flex-direction: column;
   gap: 4px;
   align-items: center;
+
+  margin-bottom: 2rem;
 }
 
 .form_submit_btn {
-  margin-top: 2rem;
-  padding: 8px 16px;
-  border: 2px solid gold;
+  margin: 0 auto;
+  padding: 16px 32px;
+  border: 2px solid;
   background: none;
 }
 /* Оверлей завантаження (Sending state) */
@@ -873,13 +926,6 @@ ul {
   margin-bottom: 24px;
 }
 
-/* Enhance section */
-.enhance_title {
-  font-size: clamp(24px, 4vw, 64px);
-  text-align: center;
-  margin: 24px;
-}
-
 .enhance_list {
   display: flex;
   flex-direction: column;
@@ -888,7 +934,6 @@ ul {
 
   padding: 24px 0;
   border: 2px solid;
-  margin-bottom: 24px;
 }
 
 .enhance_item {
@@ -909,6 +954,8 @@ ul {
 .enhance_svg {
   width: 64px;
   height: 64px;
+
+  fill: #c5a059;
 }
 
 .enhance_subtitle {
@@ -923,7 +970,7 @@ ul {
   flex-direction: column;
   align-items: center;
   padding: 24px 18px;
-  border: 2px solid gold;
+  border: 2px solid;
 }
 
 .why_us_title {
@@ -944,7 +991,7 @@ ul {
   top: 50%;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 1px;
   transform: translateY(-50%);
   background: #d5aa43;
   box-shadow: 0 0 3px rgba(213, 170, 67, 0.5);
@@ -982,6 +1029,8 @@ ul {
   flex-shrink: 0;
   width: 16px;
   height: 16px;
+
+  fill: #c5a059;
 }
 
 .whyUs_text {
@@ -996,10 +1045,11 @@ ul {
   gap: 12px;
 
   padding: 6px 12px;
-  border: 2px solid gold;
+  border: 2px solid;
 }
 
 .whyUs_card_icon {
+  fill: #c5a059;
 }
 
 .wrapper_card {
@@ -1018,44 +1068,47 @@ ul {
 
 /* FOOTER */
 .footer_address {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
 .footer_list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 
 .footer_item_address {
-    display: flex;
-    align-items: center;
-
+  display: flex;
+  align-items: center;
 }
 
 .footer_item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer_contact_wrap {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .footer_pin_mark {
-    width: 64px;
-    height: 64px;
+  width: 64px;
+  height: 64px;
+
+  fill: #c5a059;
 }
 
 .footer_item_icon {
-    width: 18px;
-    height: 18px;
+  width: 18px;
+  height: 18px;
+
+  fill: #c5a059;
 }

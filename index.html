@@ -18,267 +18,274 @@
     <link rel="stylesheet" href="./css/desktop-styles.css" />
   </head>
   <body>
-    <!-- HEADER -->
-    <header class="header">
-      <div class="container header_con">
-        <a class="header_logo" href="./index.html">
-          <svg class="header_logo_icon" width="64" height="64">
-            <use href="/images/icon.svg#logo-icon"></use>
-          </svg>
-          SpaceValueEngineering
-        </a>
+    <div class="site-wrapper">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="container header_con">
+          <a class="header_logo" href="./index.html">
+            <svg class="header_logo_icon" width="64" height="64">
+              <use href="/images/icon.svg#logo-icon"></use>
+            </svg>
+            SpaceValueEngineering
+          </a>
 
-        <nav class="nav">
-          <ul class="nav_list">
-            <li class="nav_item">
-              <a class="nav_item_link" href="#home">Home</a>
-            </li>
-            <li class="nav_item">
-              <a class="nav_item_link" href="#about">About</a>
-            </li>
-            <li class="nav_item">
-              <a class="nav_item_link" href="#services">Services</a>
-            </li>
-            <li class="nav_item">
-              <a class="nav_item_link" href="#whysve">Why SVE</a>
-            </li>
-          </ul>
-        </nav>
-
-        <button class="touch_btn" type="button" data-modal-open>
-          Get in Touch
-        </button>
-
-        <button
-          type="button"
-          class="burger_btn"
-          data-menu-open
-          aria-label="open menu"
-        >
-          <svg class="burger_icon" width="24" height="24">
-            <use href="./images/icons.svg#icon-mobile_burger-menu-1"></use>
-          </svg>
-        </button>
-      </div>
-    </header>
-
-    <!-- MAIN -->
-    <main class="main">
-      <section class="hero">
-        <div class="hero_con">
-          <!-- Спільний контейнер-обгортка для точного позиціонування -->
-          <div class="comparison-container">
-            <!-- Сам слайдер (на нього накладається маска) -->
-            <div class="comparison" id="comparison">
-              <!-- AFTER -->
-              <div class="comparison_wrapper">
-                <img
-                  src="/images/after-house.jpg"
-                  alt="After"
-                  class="comparison__image comparison__image--after"
-                />
-                <div class="comparison__label comparison__label--after">
-                  AFTER
-                </div>
-              </div>
-
-              <!-- BEFORE -->
-              <div class="comparison_wrapper">
-                <img
-                  src="/images/before-house.png"
-                  alt="Before"
-                  class="comparison__image comparison__image--before"
-                  id="beforeImage"
-                />
-                <div class="comparison__label comparison__label--before">
-                  BEFORE
-                </div>
-              </div>
-
-              <!-- VERTICAL LINE & HANDLE -->
-              <div class="comparison__line" id="comparisonLine"></div>
-              <div
-                class="comparison__handle"
-                id="comparisonHandle"
-                aria-label="Перетягнути порівняння"
-              ></div>
-            </div>
-
-            <!-- Іконка: позиціонується відносно comparison-container, але поза маскою -->
-            <div class="comparions_wrapper_icon">
-              <svg class="header_logo_icon comparions_icon">
-                <use href="/images/icon.svg#logo-icon"></use>
-              </svg>
-            </div>
-          </div>
-
-          <div class="container">
-            <h1 class="hero_title">SpaceValueEngineering</h1>
-          </div>
-        </div>
-      </section>
-      <!-- Enhance section -->
-      <section class="section">
-        <div class="container">
-          <h2 class="subtitle enhance_title">
-            We Enhance Value of Your Property
-          </h2>
-          <ul class="list enhance_list">
-            <li class="item enhance_item">
-              <svg class="enhance_svg">
-                <use href="./images/icons.svg#icon-house"></use>
-              </svg>
-              <h3 class="enhance_subtitle">Increase value</h3>
-            </li>
-            <li class="item enhance_item">
-              <svg class="enhance_svg">
-                <use href="./images/icons.svg#icon-triangular-ruler"></use>
-              </svg>
-              <h3 class="enhance_subtitle">Maximize space</h3>
-            </li>
-            <li class="item enhance_item">
-              <svg class="enhance_svg">
-                <use href="./images/icons.svg#icon-profit"></use>
-              </svg>
-              <h3 class="enhance_subtitle">Maximize returns</h3>
-            </li>
-            <li class="item enhance_item">
-              <svg class="enhance_svg">
-                <use href="./images/icons.svg#icon-dolar"></use>
-              </svg>
-              <h3 class="enhance_subtitle">Build equity</h3>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <!-- Why Us section -->
-      <section class="section">
-        <div class="container">
-          <div class="whyUs_con_wrap">
-            <h2 class="subtitle why_us_title">WHY SPACE VALUE ENGINEERING?</h2>
-
-            <div class="divider"></div>
-
-            <ul class="list whyUs_list">
-              <li class="item whyUs_item">
-                <svg class="whyUs_item_icon">
-                  <use href="/images/icons.svg#icon-check-mark"></use>
-                </svg>
-                <p class="text whyUs_text">Land Value Optimization</p>
+          <nav class="nav">
+            <ul class="nav_list">
+              <li class="nav_item">
+                <a class="nav_item_link" href="#home">Home</a>
               </li>
-              <li class="item whyUs_item">
-                <svg class="whyUs_item_icon">
-                  <use href="/images/icons.svg#icon-check-mark"></use>
-                </svg>
-                <p class="text whyUs_text">Increase Home’s Market Value</p>
+              <li class="nav_item">
+                <a class="nav_item_link" href="#about">About</a>
               </li>
-              <li class="item whyUs_item">
-                <svg class="whyUs_item_icon">
-                  <use href="/images/icons.svg#icon-check-mark"></use>
-                </svg>
-                <p class="text whyUs_text">Increase Usable Living Space</p>
+              <li class="nav_item">
+                <a class="nav_item_link" href="#services">Services</a>
               </li>
-              <li class="item whyUs_item">
-                <svg class="whyUs_item_icon">
-                  <use href="/images/icons.svg#icon-check-mark"></use>
-                </svg>
-                <p class="text whyUs_text">
-                  Improve Return on Investment (ROI)
-                </p>
-              </li>
-              <li class="item whyUs_item">
-                <svg class="whyUs_item_icon">
-                  <use href="/images/icons.svg#icon-check-mark"></use>
-                </svg>
-                <p class="text whyUs_text">Improve Refinancing Potential</p>
-              </li>
-              <li class="item whyUs_item">
-                <svg class="whyUs_item_icon">
-                  <use href="/images/icons.svg#icon-check-mark"></use>
-                </svg>
-                <p class="text whyUs_text">Increase Rental Income Potential</p>
-              </li>
-              <li class="item whyUs_item">
-                <svg class="whyUs_item_icon">
-                  <use href="/images/icons.svg#icon-check-mark"></use>
-                </svg>
-                <p class="text whyUs_text">
-                  Invest Only in Improvements That Add Measurable Value
-                </p>
-              </li>
-              <li class="item whyUs_item">
-                <svg class="whyUs_item_icon">
-                  <use href="/images/icons.svg#icon-check-mark"></use>
-                </svg>
-                <p class="text whyUs_text">
-                  Avoid Spending Money on Renovations That Don’t Pay Off
-                </p>
-              </li>
-              <li class="item whyUs_item">
-                <svg class="whyUs_item_icon">
-                  <use href="/images/icons.svg#icon-check-mark"></use>
-                </svg>
-                <p class="text whyUs_text">Turn Unused Space into Equity</p>
+              <li class="nav_item">
+                <a class="nav_item_link" href="#whysve">Why SVE</a>
               </li>
             </ul>
+          </nav>
 
-            <!-- Why Us Card -->
-            <div class="card">
-              <svg class="whyUs_card_icon" width="64" height="64">
-                <use href="/images/icons.svg#icon-dolar"></use>
-              </svg>
+          <button class="touch_btn" type="button" data-modal-open>
+            Get in Touch
+          </button>
 
-              <div class="wrapper_card">
-                <h3 class="subtitle_whyUs_card">FINANCING AVAILABLE</h3>
-                <p class="text text_whyUs_card">Terms and Conditions Apply</p>
+          <button
+            type="button"
+            class="burger_btn"
+            data-menu-open
+            aria-label="open menu"
+          >
+            <svg class="burger_icon" width="24" height="24">
+              <use href="/images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- MAIN -->
+      <main class="main">
+        <section class="hero">
+          <div class="hero_con">
+            <!-- Спільний контейнер-обгортка для точного позиціонування -->
+            <div class="comparison-container">
+              <!-- Сам слайдер (на нього накладається маска) -->
+              <div class="comparison" id="comparison">
+                <!-- AFTER -->
+                <div class="comparison_wrapper">
+                  <img
+                    src="/images/after-house.jpg"
+                    alt="After"
+                    class="comparison__image comparison__image--after"
+                  />
+                  <div class="comparison__label comparison__label--after">
+                    AFTER
+                  </div>
+                </div>
+
+                <!-- BEFORE -->
+                <div class="comparison_wrapper">
+                  <img
+                    src="/images/before-house.png"
+                    alt="Before"
+                    class="comparison__image comparison__image--before"
+                    id="beforeImage"
+                  />
+                  <div class="comparison__label comparison__label--before">
+                    BEFORE
+                  </div>
+                </div>
+
+                <!-- VERTICAL LINE & HANDLE -->
+                <div class="comparison__line" id="comparisonLine"></div>
+                <div
+                  class="comparison__handle"
+                  id="comparisonHandle"
+                  aria-label="Перетягнути порівняння"
+                ></div>
+              </div>
+
+              <!-- Іконка: позиціонується відносно comparison-container, але поза маскою -->
+              <div class="comparions_wrapper_icon">
+                <svg class="header_logo_icon comparions_icon">
+                  <use href="/images/icon.svg#logo-icon"></use>
+                </svg>
+              </div>
+            </div>
+
+            <div class="container">
+              <h1 class="hero_title">SpaceValueEngineering</h1>
+            </div>
+          </div>
+        </section>
+        <!-- Enhance section -->
+        <section class="section">
+          <div class="container">
+            <h2 class="subtitle enhance_title">
+              We Enhance Value of Your Property
+            </h2>
+            <ul class="list enhance_list">
+              <li class="item enhance_item">
+                <svg class="enhance_svg">
+                  <use href="./images/icons.svg#icon-house"></use>
+                </svg>
+                <h3 class="enhance_subtitle">Increase value</h3>
+              </li>
+              <li class="item enhance_item">
+                <svg class="enhance_svg">
+                  <use href="./images/icons.svg#icon-triangular-ruler"></use>
+                </svg>
+                <h3 class="enhance_subtitle">Maximize space</h3>
+              </li>
+              <li class="item enhance_item">
+                <svg class="enhance_svg">
+                  <use href="./images/icons.svg#icon-profit"></use>
+                </svg>
+                <h3 class="enhance_subtitle">Maximize returns</h3>
+              </li>
+              <li class="item enhance_item">
+                <svg class="enhance_svg">
+                  <use href="./images/icons.svg#icon-dolar"></use>
+                </svg>
+                <h3 class="enhance_subtitle">Build equity</h3>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- Why Us section -->
+        <section class="section">
+          <div class="container">
+            <div class="whyUs_con_wrap">
+              <h2 class="subtitle why_us_title">
+                WHY SPACE VALUE ENGINEERING?
+              </h2>
+
+              <div class="divider"></div>
+
+              <ul class="list whyUs_list">
+                <li class="item whyUs_item">
+                  <svg class="whyUs_item_icon">
+                    <use href="/images/icons.svg#icon-check-mark"></use>
+                  </svg>
+                  <p class="text whyUs_text">Land Value Optimization</p>
+                </li>
+                <li class="item whyUs_item">
+                  <svg class="whyUs_item_icon">
+                    <use href="/images/icons.svg#icon-check-mark"></use>
+                  </svg>
+                  <p class="text whyUs_text">Increase Home’s Market Value</p>
+                </li>
+                <li class="item whyUs_item">
+                  <svg class="whyUs_item_icon">
+                    <use href="/images/icons.svg#icon-check-mark"></use>
+                  </svg>
+                  <p class="text whyUs_text">Increase Usable Living Space</p>
+                </li>
+                <li class="item whyUs_item">
+                  <svg class="whyUs_item_icon">
+                    <use href="/images/icons.svg#icon-check-mark"></use>
+                  </svg>
+                  <p class="text whyUs_text">
+                    Improve Return on Investment (ROI)
+                  </p>
+                </li>
+                <li class="item whyUs_item">
+                  <svg class="whyUs_item_icon">
+                    <use href="/images/icons.svg#icon-check-mark"></use>
+                  </svg>
+                  <p class="text whyUs_text">Improve Refinancing Potential</p>
+                </li>
+                <li class="item whyUs_item">
+                  <svg class="whyUs_item_icon">
+                    <use href="/images/icons.svg#icon-check-mark"></use>
+                  </svg>
+                  <p class="text whyUs_text">
+                    Increase Rental Income Potential
+                  </p>
+                </li>
+                <li class="item whyUs_item">
+                  <svg class="whyUs_item_icon">
+                    <use href="/images/icons.svg#icon-check-mark"></use>
+                  </svg>
+                  <p class="text whyUs_text">
+                    Invest Only in Improvements That Add Measurable Value
+                  </p>
+                </li>
+                <li class="item whyUs_item">
+                  <svg class="whyUs_item_icon">
+                    <use href="/images/icons.svg#icon-check-mark"></use>
+                  </svg>
+                  <p class="text whyUs_text">
+                    Avoid Spending Money on Renovations That Don’t Pay Off
+                  </p>
+                </li>
+                <li class="item whyUs_item">
+                  <svg class="whyUs_item_icon">
+                    <use href="/images/icons.svg#icon-check-mark"></use>
+                  </svg>
+                  <p class="text whyUs_text">Turn Unused Space into Equity</p>
+                </li>
+              </ul>
+
+              <!-- Why Us Card -->
+              <div class="card">
+                <svg class="whyUs_card_icon" width="64" height="64">
+                  <use href="/images/icons.svg#icon-dolar"></use>
+                </svg>
+
+                <div class="wrapper_card">
+                  <h3 class="subtitle_whyUs_card">FINANCING AVAILABLE</h3>
+                  <p class="text text_whyUs_card">Terms and Conditions Apply</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container">
-        <address class="footer_address">
-          <div class="footer_item_address">
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container">
+          <address class="footer_address">
+            <div class="footer_item_address">
               <svg class="footer_pin_mark">
                 <use href="/images/icons.svg#icon-pin-mark"></use>
               </svg>
 
               <div class="footer_address__text">
-                <p>160 Applewood Crescent #26, <br>Vaughan, ON L4K 4H2</p>
+                <p>160 Applewood Crescent #26, <br />Vaughan, ON L4K 4H2</p>
               </div>
             </div>
-          <ul class="footer_list">
-            <li class="footer_item">
-              <h3 class="footer_item_subtitle">Call</h3>
-              <div class="footer_contact_wrap">
-                <svg class="footer_item_icon">
-                <use href="/images/icons.svg#icon-telephone"></use>
-              </svg>
+            <ul class="footer_list">
+              <li class="footer_item">
+                <h3 class="footer_item_subtitle">Call</h3>
+                <div class="footer_contact_wrap">
+                  <svg class="footer_item_icon">
+                    <use href="/images/icons.svg#icon-telephone"></use>
+                  </svg>
 
-              <a href="tel:+14165199332" class="footer_contact">416 519 9332</a>
-              </div>
-            </li>
+                  <a href="tel:+14165199332" class="footer_contact"
+                    >416 519 9332</a
+                  >
+                </div>
+              </li>
 
-            <li class="footer_item">
-              <h3 class="footer_item_subtitle">Mail</h3>
-              <div class="footer_contact_wrap">
-                <svg class="footer_item_icon">
-                <use href="/images/icons.svg#icon-envelope"></use>
-              </svg>
-              <a
-                href="mailto:#" class="footer_contact">
-                spacevalueengineering@gmail.com
-              </a>
-              </div>
-            </li>
-          </ul>
-        </address>
-      </div>
-    </footer>
+              <li class="footer_item">
+                <h3 class="footer_item_subtitle">Mail</h3>
+                <div class="footer_contact_wrap">
+                  <svg class="footer_item_icon">
+                    <use href="/images/icons.svg#icon-envelope"></use>
+                  </svg>
+                  <a href="mailto:#" class="footer_contact">
+                    spacevalueengineering@gmail.com
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </address>
+        </div>
+      </footer>
+    </div>
 
     <!-- Mobile menu -->
     <div class="mobile_menu" data-menu>
@@ -289,8 +296,8 @@
           aria-label="close menu"
           data-menu-close
         >
-          <svg class="mobile_menu_close_icon" width="8" height="8">
-            <use href=""></use>
+          <svg class="mobile_menu_close_icon">
+            <use href="/images/icons.svg#icon-close"></use>
           </svg>
         </button>
 

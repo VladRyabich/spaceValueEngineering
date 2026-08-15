@@ -1,8 +1,5 @@
 /* ------------------------------GLOBAL------------------------------- */
 @media screen and (min-width: 1158px) {
-  .section {
-    padding: 120px 0;
-  }
 
   /* HEADER */
   .header {
@@ -17,8 +14,8 @@
     padding: 8px 16px;
   }
 
-  .header_con {
-    border: 2px solid gold;
+  .header > .header_con {
+	margin-bottom: 24px;
   }
 
   /* ------------------- MAIN ------------------- */
@@ -100,9 +97,6 @@
 
   .hero_title {
     font-size: 72px;
-  }
-  .section {
-    padding: 120px 0;
   }
 
   /* Enhance section */

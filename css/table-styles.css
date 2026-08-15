@@ -1,15 +1,24 @@
 /* ------------------------------GLOBAL------------------------------- */
 @media screen and (min-width: 768px) {
+  .site-wrapper {
+    max-width: 1158px;
+    margin: 12px auto;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+
+    /* Легке внутрішнє світіння вздовж рамки для преміального ефекту */
+    box-shadow:
+      inset 0 0 15px rgba(212, 175, 55, 0.08),
+      0 0 20px rgba(0, 0, 0, 0.6);
+
+    padding: 12px 12px; /* Внутрішні відступи від рамки до контенту */
+    box-sizing: border-box;
+  }
+
   .container,
   .hero_con {
     max-width: 768px;
 
     margin: 0 auto;
-  }
-
-  .hero_con {
-    border-left: 2px solid gold;
-    border-right: 2px solid gold;
   }
 
   /* HEADER */
@@ -18,7 +27,6 @@
   }
 
   .header_con {
-    border: 2px solid gold;
     margin-top: 6px;
   }
 
@@ -29,9 +37,7 @@
 
   .touch_btn {
     padding: 8px 16px;
-    border: 2px solid gold;
-
-    background: none;
+    border: 2px solid #c5a059;
   }
 
   .nav_list {
@@ -150,7 +156,7 @@
   /* Enhance section */
   .enhance_list {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     gap: 0;
   }
 
@@ -217,6 +223,14 @@
   }
 
   .footer_item {
-    width: 270px;
+    align-items: flex-end;
+  }
+
+  .footer_item_address {
+	width: 700px;
+	justify-content: center;
+
+	padding-bottom: 24px;
+	border-bottom: 1px solid;
   }
 }
