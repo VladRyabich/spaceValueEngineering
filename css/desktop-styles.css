@@ -9,4 +9,14 @@
 	.section {
 		padding: 120px 0;
 	}
+
+	/* Enhance section */
+	.enhance_item {
+		gap: 24px;
+	}
+
+	.enhance_svg {
+		width: 128px;
+		height: 128px;
+	}
 }
