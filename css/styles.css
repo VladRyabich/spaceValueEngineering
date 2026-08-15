@@ -7,6 +7,21 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+
 button {
     cursor: pointer;
 }
