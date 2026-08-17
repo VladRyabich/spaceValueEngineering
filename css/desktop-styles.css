@@ -114,4 +114,15 @@
   .whyUs_text {
     font-size: 24px;
   }
+
+  /* MODAL */
+  .modal_close_btn {
+    top: 3px;
+    right: 0vw;
+  }
+
+  /* PRIVACY MODAL */
+  .privacy_modal {
+    max-width: 1000px;
+  }
 }

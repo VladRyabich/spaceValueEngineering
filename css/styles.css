@@ -1,4 +1,8 @@
 :root {
+  /* Fonts */
+  --main-familly: "Montserrat", sans-serif;
+  --second-family: "Cormorant Garamond", serif;
+
   /* Colors */
   --background: #0a331f; /* Основний темно-зелений */
   --text-primary: #ffb81c; /* Основний золотий */
@@ -18,7 +22,7 @@
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Font size */
-  --logo-title-size: clamp(18px, 1rem + 0.8vw, 24px);
+  --logo-title-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
   --susbtitle-size: clamp(1.125rem, 0.482rem + 2.86vw, 3rem);
 
   /* Text shadow */
@@ -61,6 +65,8 @@ html {
 }
 
 body {
+  font-family: var(--main-familly);
+
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -86,7 +92,7 @@ button:focus {
   background: var(--gold-hover);
   color: var(--background);
   fill: var(--background);
-  text-shadow: 3px 3px 3px 0.5;
+  text-shadow: var(--card-shadow-style);
   transition: var(--transition-style);
 }
 
@@ -141,6 +147,8 @@ ul {
 }
 
 .title {
+  font-family: var(--second-family);
+  font-weight: 700;
   font-size: clamp(1.5rem, 1.285rem + 0.95vw, 2rem);
   text-align: center;
   margin: 24px;
@@ -162,9 +170,10 @@ ul {
 }
 
 .header_logo {
+  font-weight: 200;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 
   font-size: var(--logo-title-size);
 }
@@ -419,8 +428,9 @@ ul {
 }
 
 .hero_title {
+  font-family: var(--second-family);
+  font-weight: 200;
   text-align: center;
-  font-size: 24px;
   font-size: clamp(2rem, 1.167rem + 3.7vw, 4.5rem);
 
   text-shadow: var(--title-shadow-style);
@@ -809,7 +819,7 @@ ul {
   width: 100%;
   height: 100%;
 
-  background-color: #063f2fed;
+  background-color: var(--background);
 
   visibility: hidden;
   opacity: 0;
@@ -830,7 +840,7 @@ ul {
 
 .modal {
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
 
   width: 100vw;
@@ -956,12 +966,10 @@ ul {
   flex-direction: column;
   gap: 4px;
   align-items: center;
-
-  margin-bottom: 2rem;
 }
 
 .form_submit_btn {
-  margin: 0 auto;
+  margin: 8px auto 0;
   padding: 16px 32px;
   border: 2px solid var(--gold-hover);
   border-radius: 3px;
@@ -1064,4 +1072,167 @@ ul {
   padding: 24px 0;
   border: 2px solid;
   margin-bottom: 24px;
+}
+
+/* ------------------- PRIVACY POLICY ------------------- */
+
+.privacy_backdrop {
+  background-color: rgba(10, 51, 31, 0.96);
+  overflow-y: auto;
+}
+
+.privacy_modal {
+  top: 50%;
+  width: calc(100% - 24px);
+  max-width: 900px;
+  min-height: auto;
+  max-height: calc(100dvh - 24px);
+
+  padding: 24px 18px;
+
+  border: 2px solid var(--gold-hover);
+  border-radius: 3px;
+
+  background-color: var(--background);
+
+  box-shadow: var(--card-shadow-style);
+}
+
+.privacy_content {
+  padding: 24px 4px;
+}
+
+.privacy_title {
+  margin-bottom: 8px;
+
+  font-family: var(--second-family);
+  font-size: clamp(1.8rem, 1.2rem + 3vw, 3rem);
+  font-weight: 700;
+
+  color: var(--text-primary);
+  text-shadow: var(--title-shadow-style);
+}
+
+.privacy_date {
+  margin-bottom: 32px;
+
+  color: var(--accent-secondary-text);
+
+  font-size: 11px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.privacy_text {
+  margin-bottom: 18px;
+
+  color: var(--text-large-regular);
+
+  font-family: var(--main-familly);
+  font-size: clamp(12px, 1.5vw, 15px);
+  font-weight: 400;
+  line-height: 1.7;
+
+  text-shadow: var(--text-shadow-style);
+}
+
+.privacy_section {
+  padding-top: 20px;
+  margin-top: 28px;
+
+  border-top: 1px solid var(--border-separators);
+}
+
+.privacy_section_title {
+  margin-bottom: 16px;
+
+  color: var(--text-primary);
+
+  font-family: var(--second-family);
+  font-size: clamp(1.4rem, 1rem + 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+
+  text-shadow: var(--title-shadow-style);
+}
+
+.privacy_subtitle {
+  margin: 24px 0 12px;
+
+  color: var(--accent-secondary-text);
+
+  font-family: var(--main-familly);
+  font-size: clamp(13px, 1.5vw, 17px);
+  font-weight: 600;
+  line-height: 1.4;
+
+  text-shadow: var(--text-shadow-style);
+}
+
+.privacy_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin: 0 0 20px;
+  padding-left: 22px;
+
+  list-style-type: disc;
+}
+
+.privacy_list_item {
+  padding-left: 4px;
+
+  color: var(--text-large-regular);
+
+  font-family: var(--main-familly);
+  font-size: clamp(12px, 1.5vw, 14px);
+  line-height: 1.7;
+
+  text-shadow: var(--text-shadow-style);
+}
+
+.privacy_list_item::marker {
+  color: var(--gold-hover);
+}
+
+.privacy_list_item strong {
+  color: var(--accent-secondary-text);
+}
+
+.privacy_modal .policy_link {
+  color: var(--accent-secondary-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  transition: var(--transition-style);
+}
+
+.privacy_modal .policy_link:hover,
+.privacy_modal .policy_link:focus {
+  color: var(--text-primary);
+}
+
+.privacy_close_btn {
+  top: 16px;
+  right: 16px;
+
+  position: fixed;
+}
+
+.privacy_modal_content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-hover) var(--secondary-background);
+}
+
+.privacy_modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.privacy_modal::-webkit-scrollbar-track {
+  background: var(--secondary-background);
+}
+
+.privacy_modal::-webkit-scrollbar-thumb {
+  background-color: var(--gold-hover);
 }
