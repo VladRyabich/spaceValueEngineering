@@ -37,11 +37,20 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Блокує горизонтальний скрол на рівні вікна */
+  position: relative;
+}
 
+body {
+  font-family: var(--main-familly);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   background-color: var(--background);
   background-image: 
     radial-gradient(
@@ -54,7 +63,6 @@ body {
   background-position: center;
   background-size: cover;
   color: var(--text-primary);
-  font-family: "Cinzel", serif;
 }
 
 /* ------------------- GLOBAL ------------------- */
@@ -219,7 +227,7 @@ ul {
   cursor: ew-resize;
   user-select: none;
   -webkit-user-select: none;
-  touch-action: none;
+  touch-action: pan-y;
 
   -webkit-mask-image: linear-gradient(
     to bottom,
@@ -654,6 +662,7 @@ ul {
   width: 100%;
   max-width: 300px;
   height: 300px;
+  border: 0;
 }
 
 .footer_list {
@@ -992,4 +1001,33 @@ ul {
 
 .privacy_modal::-webkit-scrollbar-thumb {
   background-color: var(--gold-hover);
+}
+
+/* SCROLL & REVEAL ANIMATIONS */
+
+.anim_fade_up {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.anim_fade_up.is_visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Каскадні затримки для плавної послідовної появи */
+.anim_delay_1 {
+  transition-delay: 0.15s;
+}
+
+.anim_delay_2 {
+  transition-delay: 0.3s;
+}
+
+.anim_delay_3 {
+  transition-delay: 0.45s;
 }
