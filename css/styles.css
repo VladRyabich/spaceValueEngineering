@@ -830,7 +830,7 @@ ul {
 .backdrop.is_open {
   visibility: visible;
   opacity: 1;
-  z-index: 999;
+  z-index: 900;
   pointer-events: auto;
 }
 
@@ -1020,7 +1020,7 @@ ul {
 .callback_phone:focus {
   font-weight: 600;
   color: var(--gold-hover);
-      text-shadow: #0a331f 2px -1px 1px;
+  text-shadow: #0a331f 2px -1px 1px;
 }
 
 /* Стилізація кнопки завантаження файлу та прев'ю */
@@ -1081,8 +1081,18 @@ ul {
   overflow-y: auto;
 }
 
+[data-privacy-modal].is_open {
+  z-index: 950;
+}
+
+/* Центрування та скрол для вікна політики */
 .privacy_modal {
+  position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+
   width: calc(100% - 24px);
   max-width: 900px;
   min-height: auto;
@@ -1216,6 +1226,16 @@ ul {
 .privacy_close_btn {
   top: 16px;
   right: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  border: 2px solid var(--gold-hover);
+  cursor: pointer;
+  background-color: var(--background);
+  transition: var(--transition-style);
 
   position: fixed;
 }
