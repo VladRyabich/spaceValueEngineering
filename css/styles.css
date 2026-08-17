@@ -4,17 +4,17 @@
   --second-family: "Cormorant Garamond", serif;
 
   /* Colors */
-  --background: #0a331f; /* Основний темно-зелений */
-  --text-primary: #ffb81c; /* Основний золотий */
-  --text-large-regular: #fff4d6; /* Для великого/звичайного тексту */
-  --secondary-background: #164d32; /* Другорядний фон */
-  --hover-cards: #1e6340; /* Hover / cards */
-  --gold-hover: #c98e08; /* Hover для золотого */
-  --accent-secondary-text: #ffd66b; /* Акцент / secondary text */
-  --neutral-contrast: #f8f7f2; /* Нейтральний контраст */
-  --border-separators: #28553d; /* Межі / separators */
+  --background: #0a331f;
+  --text-primary: #ffb81c;
+  --text-large-regular: #fff4d6;
+  --secondary-background: #164d32;
+  --hover-cards: #1e6340;
+  --gold-hover: #c98e08;
+  --accent-secondary-text: #ffd66b;
+  --neutral-contrast: #f8f7f2;
+  --border-separators: #28553d;
 
-  /*  Transition  */
+  /* Transition */
   --transition-style:
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -36,7 +36,7 @@
 *::after {
   box-sizing: border-box;
 }
-html,
+
 body {
   width: 100%;
   max-width: 100%;
@@ -44,7 +44,6 @@ body {
 
   background-color: var(--background);
   background-image: 
-    /* Радіальний віньєт-градієнт: світліший смарагдовий у центрі, майже чорний по краях */
     radial-gradient(
       ellipse at center,
       rgba(14, 45, 29, 0.4) 0%,
@@ -54,9 +53,8 @@ body {
   background-repeat: repeat;
   background-position: center;
   background-size: cover;
-  /* background-attachment: fixed; за бажанням, щоб фон не рухався при скролі */
-  color: var(--text-primary); /* золотистий відтінок тексту */
-  font-family: "Cinzel", serif; /* або будь-який інший антикварний шрифт */
+  color: var(--text-primary);
+  font-family: "Cinzel", serif;
 }
 
 /* ------------------- GLOBAL ------------------- */
@@ -66,7 +64,6 @@ html {
 
 body {
   font-family: var(--main-familly);
-
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -106,7 +103,6 @@ svg {
 
 img {
   display: block;
-
   max-width: 100%;
   height: auto;
 }
@@ -131,13 +127,12 @@ a {
 ul {
   margin: 0;
   padding-left: 0;
-
   list-style-type: none;
 }
 
 .container {
-  max-width: 320px;
-
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -155,17 +150,14 @@ ul {
   text-shadow: var(--title-shadow-style);
 }
 
-/* ------------------- HEADER ------------------- */
-.header {
-}
+/*  HEADER  */
+
 .header_con {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   max-width: 90vw;
-
   padding: 8px 16px;
 }
 
@@ -174,7 +166,6 @@ ul {
   display: flex;
   align-items: center;
   gap: 8px;
-
   font-size: var(--logo-title-size);
 }
 
@@ -208,30 +199,15 @@ ul {
 .burger_icon {
   width: 24px;
   height: 24px;
-
-  fill: var();
 }
 
-/* ------------------- MAIN ------------------- */
-
-/* Hero section */
-.hero-section-wrapper {
-  position: relative;
-}
-
-/* =========================================
-   SLIDER
-========================================= */
-
-/* =========================================
-   MAIN CONTAINER
-========================================= */
+/* SLIDER & HERO */
 
 .comparison-container {
   position: relative;
   width: 100%;
-  max-width: 1200px; /* Або ваша ширина контенту */
-  margin: 0 auto 20px; /* Центрування по горизонталі */
+  max-width: 1200px;
+  margin: 0 auto 20px;
 }
 
 .comparison {
@@ -245,7 +221,6 @@ ul {
   -webkit-user-select: none;
   touch-action: none;
 
-  /* Градієнтне зникнення лише для слайдера */
   -webkit-mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1) 0%,
@@ -260,10 +235,6 @@ ul {
   );
 }
 
-/* =========================================
-   WRAPPERS (ШАРИ ПІД КАРТИНКИ + ТЕКСТ)
-========================================= */
-
 .comparison_wrapper {
   position: absolute;
   top: 0;
@@ -274,16 +245,12 @@ ul {
 }
 
 .comparison_wrapper:first-of-type {
-  z-index: 1; /* Шар AFTER (нижній) */
+  z-index: 1;
 }
 
 .comparison_wrapper:last-of-type {
-  z-index: 5; /* Шар BEFORE (верхній) */
+  z-index: 5;
 }
-
-/* =========================================
-   IMAGES
-========================================= */
 
 .comparison__image {
   position: absolute;
@@ -296,20 +263,14 @@ ul {
   pointer-events: none;
 }
 
-/* AFTER */
 .comparison__image--after {
   z-index: 1;
 }
 
-/* BEFORE */
 .comparison__image--before {
   z-index: 2;
-  clip-path: inset(0 50% 0 0); /* JS продовжує змінювати цей параметр */
+  clip-path: inset(0 50% 0 0);
 }
-
-/* =========================================
-   LABELS (БЕЙДЖІ)
-========================================= */
 
 .comparison__label {
   position: absolute;
@@ -325,21 +286,15 @@ ul {
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.88);
 }
 
-/* Ховається під фото Before (z-index 1 < 2) */
 .comparison__label--after {
   right: 10px;
   z-index: 1;
 }
 
-/* Лежить на Before, але нижче лінії повзунка */
 .comparison__label--before {
   left: 10px;
   z-index: 3;
 }
-
-/* =========================================
-   VERTICAL LINE
-========================================= */
 
 .comparison__line {
   position: absolute;
@@ -347,15 +302,11 @@ ul {
   bottom: 0;
   left: 50%;
   width: 2px;
-  z-index: 15; /* Вище за бейдж Before */
+  z-index: 15;
   background: var(--neutral-contrast);
   transform: translateX(-50%);
   pointer-events: none;
 }
-
-/* =========================================
-   HANDLE
-========================================= */
 
 .comparison__handle {
   position: absolute;
@@ -363,7 +314,7 @@ ul {
   left: 50%;
   width: 24px;
   height: 24px;
-  z-index: 20; /* Найвищий шар керування */
+  z-index: 20;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: var(--background);
@@ -371,10 +322,6 @@ ul {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
   pointer-events: none;
 }
-
-/* =========================================
-   ARROWS
-========================================= */
 
 .comparison__handle::before,
 .comparison__handle::after {
@@ -387,31 +334,21 @@ ul {
   background: var(--gold-hover);
 }
 
-/* LEFT ARROW */
 .comparison__handle::before {
   transform: translate(-8px, -50%);
   clip-path: polygon(100% 0, 65% 0, 0 50%, 65% 100%, 100% 100%, 35% 50%);
 }
 
-/* RIGHT ARROW */
 .comparison__handle::after {
   transform: translate(2px, -50%);
   clip-path: polygon(0 0, 35% 0, 100% 50%, 35% 100%, 0 100%, 65% 50%);
 }
 
-/* =========================================
-   BOTTOM ICON (ЛОГОТИП ПО СЕРЕДИНІ)
-========================================= */
-
 .comparions_wrapper_icon {
   position: absolute;
   left: 50%;
   bottom: 0;
-  transform: translate(
-    -50%,
-    30%
-  ); /* Рівно половина іконки на картинці, половина на фоні під нею */
-
+  transform: translate(-50%, 30%);
   width: 64px;
   height: 64px;
   z-index: 30;
@@ -432,7 +369,6 @@ ul {
   font-weight: 200;
   text-align: center;
   font-size: clamp(2rem, 1.167rem + 3.7vw, 4.5rem);
-
   text-shadow: var(--title-shadow-style);
 }
 
@@ -441,15 +377,12 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   z-index: 998;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
   background-color: var(--background);
 }
 
@@ -458,18 +391,6 @@ ul {
   visibility: visible;
   pointer-events: auto;
   transition: var(--transition-style);
-}
-
-.mobile_menu_container {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-
-  height: 100%;
-
-  padding-top: 72px;
-  padding-bottom: 40px;
 }
 
 .mobile_menu_wpap {
@@ -485,20 +406,14 @@ ul {
   position: absolute;
   top: 24px;
   right: 24px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 24px;
   width: 24px;
-
   border: 2px solid var(--gold-hover);
-
   cursor: pointer;
-
   background-color: var(--background);
-
   transition: var(--transition-style);
 }
 
@@ -516,9 +431,7 @@ ul {
 .mobile_menu_close_icon {
   width: 24px;
   height: 24px;
-
   fill: var(--gold-hover);
-
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -538,7 +451,6 @@ ul {
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: 0.02em;
-
   color: var(--text-primary);
 }
 
@@ -569,7 +481,6 @@ ul {
   line-height: 1.2;
   letter-spacing: 0.02em;
   font-style: normal;
-
   color: var(--text-primary);
 }
 
@@ -593,16 +504,14 @@ ul {
   fill: var(--gold-hover);
 }
 
-/* Enhance section */
+/* ENHANCE SECTION */
 .enhance_list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-
   padding: 24px 0;
   border: 2px solid;
-
   box-shadow: var(--card-shadow-style);
 }
 
@@ -611,7 +520,6 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 12px;
-
   padding: 0 42px 24px;
   border-bottom: 2px solid;
 }
@@ -624,7 +532,6 @@ ul {
 .enhance_svg {
   width: 64px;
   height: 64px;
-
   fill: var(--gold-hover);
 }
 
@@ -634,15 +541,13 @@ ul {
   font-size: clamp(18px, 3vw, 32px);
 }
 
-/* Why Us section */
+/* WHY US SECTION */
 .whyUs_con_wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding: 24px 18px;
   border: 2px solid;
-
   box-shadow: var(--card-shadow-style);
 }
 
@@ -657,7 +562,6 @@ ul {
   height: 24px;
 }
 
-/* Лінія */
 .divider::before {
   content: "";
   position: absolute;
@@ -670,7 +574,6 @@ ul {
   box-shadow: 0 0 3px rgba(213, 170, 67, 0.5);
 }
 
-/* Ромб */
 .divider::after {
   content: "";
   position: absolute;
@@ -687,7 +590,6 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 12px;
-
   margin: 24px 0;
 }
 
@@ -701,7 +603,6 @@ ul {
   flex-shrink: 0;
   width: 16px;
   height: 16px;
-
   fill: var(--gold-hover);
 }
 
@@ -715,10 +616,8 @@ ul {
   justify-content: center;
   align-items: center;
   gap: 12px;
-
   padding: 6px 12px;
   border: 2px solid;
-
   box-shadow: var(--card-shadow-style);
 }
 
@@ -751,13 +650,9 @@ ul {
   margin-bottom: 24px;
 }
 
-.map_wrap {
-  width: 300px;
-  height: 300px;
-}
-
 .iframe_map {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 300px;
 }
 
@@ -799,14 +694,12 @@ ul {
 .footer_pin_mark {
   width: 64px;
   height: 64px;
-
   fill: var(--gold-hover);
 }
 
 .footer_item_icon {
   width: 18px;
   height: 18px;
-
   fill: var(--gold-hover);
 }
 
@@ -815,12 +708,9 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   background-color: var(--background);
-
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -842,18 +732,14 @@ ul {
   position: absolute;
   top: 53%;
   left: 50%;
-
-  width: 100vw;
+  width: calc(100% - 32px); /* Замість 100vw */
+  max-width: 480px;
   min-height: 480px;
-
   max-height: 100vh;
   overflow-y: auto;
-
   padding: 16px 24px;
   border-radius: 4px;
-
   background-color: var(--modal-bg-color);
-
   transform: translate(-50%, -50%);
   transition: var(--transition-style);
 }
@@ -863,26 +749,20 @@ ul {
   top: 3vh;
   right: 3vw;
   z-index: 5;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 24px;
   width: 24px;
-
   border: 2px solid var(--gold-hover);
-
   cursor: pointer;
   background: none;
-
   transition: var(--transition-style);
 }
 
 .modal_close_btn:hover,
 .modal_close_btn:focus {
   border: none;
-
   background-color: var(--gold-hover);
 }
 
@@ -899,18 +779,14 @@ ul {
 .modal_title {
   font-size: clamp(0.875rem, 0.554rem + 1.61vw, 2rem);
   font-weight: 700;
-
   text-align: center;
   text-shadow: var(--text-shadow-style);
-
   margin-bottom: 16px;
-
   color: var(--secondary-color-text);
 }
 
 .modal_form {
   position: relative;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -930,30 +806,11 @@ ul {
 .checkbox_label {
   display: flex;
   align-items: center;
-
   font-size: 12px;
   font-weight: 400;
   line-height: 1.17;
   letter-spacing: 0.04em;
-
   color: var(--text-primary);
-}
-
-.checkbox {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-
-  width: 16px;
-  height: 16px;
-
-  margin-right: 8px;
-  border-radius: 2px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-
-  fill: transparent;
-  transition: var(--transition-style);
 }
 
 .policy_link {
@@ -973,7 +830,6 @@ ul {
   padding: 16px 32px;
   border: 2px solid var(--gold-hover);
   border-radius: 3px;
-
   background: none;
   color: var(--text-primary);
   cursor: pointer;
@@ -987,32 +843,9 @@ ul {
   transition: var(--transition-style);
 }
 
-/* Оверлей завантаження (Sending state) */
-
-.modal_form::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.85) url("../images/loading.gif") center /
-    50px no-repeat;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  border-radius: 4px;
-}
-
-.modal_form._sending::after {
-  opacity: 1;
-  visibility: visible;
-}
-
 .form_field {
   display: flex;
   gap: 8px;
-
   margin: 0 auto;
 }
 
@@ -1023,159 +856,71 @@ ul {
   text-shadow: #0a331f 2px -1px 1px;
 }
 
-/* Стилізація кнопки завантаження файлу та прев'ю */
-.file_wrapper {
-  position: relative;
-  display: inline-block;
-  margin-top: 5px;
-}
-
-.file_input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  font-size: 0;
-  cursor: pointer;
-}
-
-.file_button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 16px;
-  background-color: #2196f3;
-  color: #ffffff;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: var(--transition-style);
-}
-
-.file_button:hover {
-  background-color: #188ce8;
-}
-
-.file_preview {
-  display: inline-block;
-  max-width: 80px;
-  margin-top: 10px;
-}
-
-.file_preview img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-
-  padding: 24px 0;
-  border: 2px solid;
-  margin-bottom: 24px;
-}
-
-/* ------------------- PRIVACY POLICY ------------------- */
-
-.privacy_backdrop {
-  background-color: rgba(10, 51, 31, 0.96);
-  overflow-y: auto;
-}
+/* PRIVACY POLICY */
 
 [data-privacy-modal].is_open {
   z-index: 950;
 }
 
-/* Центрування та скрол для вікна політики */
 .privacy_modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow-y: auto;
-
   width: calc(100% - 24px);
   max-width: 900px;
   min-height: auto;
   max-height: calc(100dvh - 24px);
-
   padding: 24px 18px;
-
   border: 2px solid var(--gold-hover);
   border-radius: 3px;
-
   background-color: var(--background);
-
   box-shadow: var(--card-shadow-style);
-}
-
-.privacy_content {
-  padding: 24px 4px;
 }
 
 .privacy_title {
   margin-bottom: 8px;
-
   font-family: var(--second-family);
   font-size: clamp(1.8rem, 1.2rem + 3vw, 3rem);
   font-weight: 700;
-
   color: var(--text-primary);
   text-shadow: var(--title-shadow-style);
 }
 
-.privacy_date {
-  margin-bottom: 32px;
-
-  color: var(--accent-secondary-text);
-
-  font-size: 11px;
-  font-weight: 400;
-  text-align: center;
-}
-
 .privacy_text {
   margin-bottom: 18px;
-
   color: var(--text-large-regular);
-
   font-family: var(--main-familly);
   font-size: clamp(12px, 1.5vw, 15px);
   font-weight: 400;
   line-height: 1.7;
-
   text-shadow: var(--text-shadow-style);
 }
 
 .privacy_section {
   padding-top: 20px;
   margin-top: 28px;
-
   border-top: 1px solid var(--border-separators);
 }
 
 .privacy_section_title {
   margin-bottom: 16px;
-
   color: var(--text-primary);
-
   font-family: var(--second-family);
   font-size: clamp(1.4rem, 1rem + 2vw, 2rem);
   font-weight: 700;
   line-height: 1.2;
-
   text-shadow: var(--title-shadow-style);
 }
 
 .privacy_subtitle {
   margin: 24px 0 12px;
-
   color: var(--accent-secondary-text);
-
   font-family: var(--main-familly);
   font-size: clamp(13px, 1.5vw, 17px);
   font-weight: 600;
   line-height: 1.4;
-
   text-shadow: var(--text-shadow-style);
 }
 
@@ -1183,22 +928,17 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   margin: 0 0 20px;
   padding-left: 22px;
-
   list-style-type: disc;
 }
 
 .privacy_list_item {
   padding-left: 4px;
-
   color: var(--text-large-regular);
-
   font-family: var(--main-familly);
   font-size: clamp(12px, 1.5vw, 14px);
   line-height: 1.7;
-
   text-shadow: var(--text-shadow-style);
 }
 
@@ -1214,7 +954,6 @@ ul {
   color: var(--accent-secondary-text);
   text-decoration: underline;
   text-underline-offset: 3px;
-
   transition: var(--transition-style);
 }
 
@@ -1226,7 +965,6 @@ ul {
 .privacy_close_btn {
   top: 16px;
   right: 16px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1236,7 +974,6 @@ ul {
   cursor: pointer;
   background-color: var(--background);
   transition: var(--transition-style);
-
   position: fixed;
 }
 

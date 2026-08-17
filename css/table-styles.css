@@ -2,15 +2,14 @@
 @media screen and (min-width: 768px) {
   .site-wrapper {
     max-width: 1158px;
-    margin: 12px auto;
-    border: 1px solid rgba(212, 175, 55, 0.45);
+    margin: 0 auto;
+    padding: 12px 12px 24px;
+    border: 1px solid rgba(212, 175, 55, 0.45); 
 
-    /* Легке внутрішнє світіння вздовж рамки для преміального ефекту */
     box-shadow:
       inset 0 0 15px rgba(212, 175, 55, 0.08),
-      0 0 20px rgba(0, 0, 0, 0.6);
+      0 0 20px rgba(0, 0, 0, 0.6); 
 
-    padding: 12px 12px; /* Внутрішні відступи від рамки до контенту */
     box-sizing: border-box;
   }
 
@@ -88,11 +87,7 @@
   }
 
   /* ------------------- MAIN ------------------- */
-  /* Hero slider */
-
-  /* =========================================
-   SLIDER
-========================================= */
+  /* HERO SLIDER */
 
   .comparison {
     width: 100%;
@@ -102,9 +97,7 @@
     aspect-ratio: 4 / 2;
   }
 
-  /* =========================================
-   LABELS
-========================================= */
+  /* LABELS */
 
   .comparison__label {
     top: 20px;
@@ -124,26 +117,20 @@
     right: 16px;
   }
 
-  /* =========================================
-   LINE
-========================================= */
+  /* LINE */
 
   .comparison__line {
     width: 2px;
   }
 
-  /* =========================================
-   HANDLE
-========================================= */
+  /* HANDLE */
 
   .comparison__handle {
     width: 50px;
     height: 50px;
   }
 
-  /* =========================================
-   ARROWS
-========================================= */
+  /* ARROWS */
 
   .comparison__handle::before,
   .comparison__handle::after {
@@ -179,7 +166,7 @@
     max-width: 768px;
   }
 
-  /* Enhance section */
+  /* ENCHANCE SECTION */
   .enhance_list {
     flex-direction: row;
     justify-content: space-around;
@@ -196,7 +183,7 @@
     padding: 24px;
   }
 
-  /* Why Us section */
+  /* WHY US SECTION */
   .whyUs_con_wrap {
     gap: 12px;
   }

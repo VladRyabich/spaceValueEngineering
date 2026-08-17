@@ -1,7 +1,265 @@
 /* ------------------------------GLOBAL------------------------------- */
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 768px) {
+  .site-wrapper {
+    max-width: 1158px;
+    margin: 12px auto;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    box-shadow:
+      inset 0 0 15px rgba(212, 175, 55, 0.08),
+      0 0 20px rgba(0, 0, 0, 0.6);
+    padding: 12px 12px;
+    box-sizing: border-box;
+  }
+
+  .container,
+  .hero_con {
+    max-width: 768px;
+    margin: 0 auto;
+  }
 
   /* HEADER */
+  .header {
+    border: none;
+  }
+
+  .header_con {
+    margin-top: 6px;
+  }
+
+  .nav_list,
+  .touch_btn {
+    display: flex;
+  }
+
+  .touch_btn {
+    padding: 8px 16px;
+    border: 2px solid var(--gold-hover);
+    background-color: unset;
+    color: var(--gold-hover);
+  }
+
+  .nav_list {
+    gap: 8px;
+  }
+
+  .nav_item_link {
+    position: relative;
+    display: inline-block;
+    padding: 4px 8px;
+  }
+
+  .nav_item_link:hover,
+  .nav_item_link:focus {
+    color: var(--gold-hover);
+    text-shadow: #0a331f 1px -1px 1px;
+  }
+
+  .nav_item_link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: var(--gold-hover);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .nav_item_link:hover::after,
+  .nav_item_link:focus::after {
+    transform: scaleX(1);
+  }
+
+  .burger_btn {
+    display: none;
+  }
+
+  /* MOBILE MENU */
+  .mobile_menu {
+    display: none;
+  }
+
+  /* =========================================
+   SLIDER
+  ========================================= */
+  .comparison {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 4 / 2;
+  }
+
+  /* LABELS */
+  .comparison__label {
+    top: 20px;
+    padding: 7px 11px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .comparison__label--before {
+    left: 16px;
+  }
+
+  .comparison__label--after {
+    right: 16px;
+  }
+
+  /* LINE */
+  .comparison__line {
+    width: 2px;
+  }
+
+  /* HANDLE */
+  .comparison__handle {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* ARROWS */
+  .comparison__handle::before,
+  .comparison__handle::after {
+    width: 14px;
+    height: 25px;
+  }
+
+  .comparison__handle::before {
+    transform: translate(-18px, -50%);
+  }
+
+  .comparison__handle::after {
+    transform: translate(4px, -50%);
+  }
+
+  /* HERO LOGO */
+  .comparions_wrapper_icon {
+    width: 82px;
+    height: 82px;
+  }
+
+  /* MODAL */
+  .modal {
+    width: 768px;
+  }
+
+  .modal_close_btn {
+    top: 5px;
+    right: 3vw;
+  }
+
+  /* Enhance section */
+  .enhance_list {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  .enhance_item {
+    padding: 24px;
+    border-bottom: none;
+    border-right: 2px solid;
+  }
+
+  .enhance_item:last-child {
+    padding: 24px;
+  }
+
+  /* Why Us section */
+  .whyUs_con_wrap {
+    gap: 12px;
+  }
+
+  .divider {
+    width: 40%;
+  }
+
+  .whyUs_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    column-gap: 24px;
+    row-gap: 8px;
+    align-items: center;
+    margin: 24px 0;
+    padding: 0 24px;
+  }
+
+  .whyUs_item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .whyUs_item_icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+  }
+
+  .whyUs_text {
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .card {
+    padding: 12px 24px;
+  }
+
+  /* FOOTER */
+  .footer_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 32px;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .footer_item {
+    align-items: flex-end;
+  }
+
+  .footer_address__text {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer_item_address {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 700px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid;
+  }
+
+  /* PRIVACY MODAL */
+  .privacy_modal {
+    width: calc(100% - 48px);
+    padding: 32px 48px;
+  }
+
+  .privacy_modal_content {
+    padding: 24px 8px;
+  }
+
+  .privacy_close_btn {
+    top: 24px;
+    right: 24px;
+  }
+}
+
+/* ------------------------------DESKTOP (1158px+)------------------------------- */
+@media screen and (min-width: 1158px) {
+  /* HEADER  */
   .header {
     margin-top: 8px;
   }
@@ -15,15 +273,14 @@
   }
 
   .header > .header_con {
-	margin-bottom: 24px;
+    margin-bottom: 24px;
   }
 
-  /* ------------------- MAIN ------------------- */
-  /* Hero slider */
+  /* HERO SECTION */
+
   .container,
   .hero_con {
     max-width: 1158px;
-
     margin: 0 auto;
     padding: 0 15px;
   }
@@ -31,27 +288,18 @@
   .hero_con {
     padding: 0;
   }
-  /* =========================================
-   SLIDER
-========================================= */
+
+  /* HERO SLIDER */
 
   .comparison {
     max-width: none;
-
     aspect-ratio: 16 / 9;
   }
 
-  /* =========================================
-   LABELS
-========================================= */
-
   .comparison__label {
     top: 27px;
-
     padding: 8px 13px;
-
     font-size: 13px;
-
     letter-spacing: 1.5px;
   }
 
@@ -63,26 +311,14 @@
     right: 20px;
   }
 
-  /* =========================================
-   LINE
-========================================= */
-
   .comparison__line {
     width: 3px;
   }
-
-  /* =========================================
-   HANDLE
-========================================= */
 
   .comparison__handle {
     width: 56px;
     height: 56px;
   }
-
-  /* =========================================
-   ARROWS
-========================================= */
 
   .comparison__handle::before,
   .comparison__handle::after {
@@ -95,7 +331,8 @@
     height: 100px;
   }
 
-  /* Enhance section */
+  /* ENCHANCE SECTION */
+
   .enhance_item {
     gap: 24px;
   }
@@ -105,8 +342,6 @@
     height: 128px;
   }
 
-  /* Why Us section */
-
   .whyUs_item {
     gap: 12px;
   }
@@ -115,13 +350,11 @@
     font-size: 24px;
   }
 
-  /* MODAL */
   .modal_close_btn {
     top: 3px;
     right: 0vw;
   }
 
-  /* PRIVACY MODAL */
   .privacy_modal {
     max-width: 1000px;
   }

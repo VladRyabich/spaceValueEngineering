@@ -71,10 +71,9 @@
       <main class="main">
         <section class="hero" id="hero">
           <div class="hero_con">
-            <!-- Спільний контейнер-обгортка для точного позиціонування -->
             <div class="comparison-container">
-              <!-- Сам слайдер (на нього накладається маска) -->
               <div class="comparison" id="comparison">
+                
                 <!-- AFTER -->
                 <div class="comparison_wrapper">
                   <img
@@ -109,7 +108,6 @@
                 ></div>
               </div>
 
-              <!-- Іконка: позиціонується відносно comparison-container, але поза маскою -->
               <div class="comparions_wrapper_icon">
                 <svg class="header_logo_icon comparions_icon">
                   <use href="/images/icons.svg#icon-logo"></use>
@@ -120,7 +118,8 @@
             <h1 class="hero_title">SpaceValueEngineering</h1>
           </div>
         </section>
-        <!-- Enhance section -->
+
+        <!-- ENHANCE SECTION -->
         <section class="section" id="enhance">
           <div class="container">
             <h2 class="title enhance_title">
@@ -154,7 +153,8 @@
             </ul>
           </div>
         </section>
-        <!-- Why Us section -->
+
+        <!-- WHY US SECTION -->
         <section class="section" id="whysve">
           <div class="container">
             <div class="whyUs_con_wrap">
@@ -227,7 +227,7 @@
                 </li>
               </ul>
 
-              <!-- Why Us Card -->
+              <!-- WHY US CARD -->
               <div class="card">
                 <svg class="whyUs_card_icon" width="64" height="64">
                   <use href="/images/icons.svg#icon-enhance-dolar"></use>
@@ -272,7 +272,7 @@
             </div>
             <ul class="footer_list">
               <li class="footer_item">
-                <h3 class="footer_item_subtitle">Call</h3>
+                <h3 class="footer_item_subtitle">Call:</h3>
                 <div class="footer_contact_wrap">
                   <svg class="footer_item_icon">
                     <use href="/images/icons.svg#icon-telephone"></use>
@@ -285,13 +285,13 @@
               </li>
 
               <li class="footer_item">
-                <h3 class="footer_item_subtitle">Mail</h3>
+                <h3 class="footer_item_subtitle">Email:</h3>
                 <div class="footer_contact_wrap">
                   <svg class="footer_item_icon">
                     <use href="/images/icons.svg#icon-envelope"></use>
                   </svg>
-                  <a href="mailto:#" class="footer_contact">
-                    spacevalueengineering@gmail.com
+                  <a href="mailto:pizdatoinc@gmail.com" class="footer_contact">
+                    Pizdatoinc@gmail.com
                   </a>
                 </div>
               </li>
@@ -301,7 +301,7 @@
       </footer>
     </div>
 
-    <!-- Mobile menu -->
+    <!-- MOBILE MENU -->
     <div class="mobile_menu" data-menu>
       <div class="container mobile_menu_wpap">
         <button
@@ -345,10 +345,10 @@
               </svg>
               <a
                 class="mobile_address_link"
-                href="mailto:vlad2253@gmail.com"
+                href="mailto:Pizdatoinc@gmail.com"
                 data-mobile-modal
               >
-                vlad2253@gmail.com
+                Pizdatoinc@gmail.com
               </a>
             </li>
           </ul>
@@ -356,11 +356,9 @@
       </div>
     </div>
 
-    <!-- Modal form -->
+    <!-- MODAL FORM -->
     <div class="backdrop" data-modal>
-      <!-- Кнопка закриття -->
       <button type="button" class="modal_close_btn" data-modal-close>
-        <!-- SVG іконка закриття -->
         <svg class="close_btn_icon">
           <use href="./images/icons.svg#icon-close"></use>
         </svg>
@@ -381,7 +379,7 @@
             value="c89037fa-8be8-476b-be08-497ed9a52319"
           />
 
-          <!-- Повне ім'я -->
+          <!-- NAME -->
           <label class="form_modal_label" for="user-name">Name</label>
           <input
             class="form_input_style"
@@ -394,6 +392,7 @@
             required
           />
 
+          <!-- EMAIL -->
           <label class="form_modal_label" for="user-email">Email</label>
           <input
             class="form_input_style"
@@ -405,6 +404,7 @@
             required
           />
 
+          <!-- PHONE -->
           <label class="form_modal_label" for="user-phone">Phone</label>
           <input
             class="form_input_style"
@@ -417,10 +417,10 @@
             required
           />
 
+          <!-- COMMENT -->
           <label for="user-comment" class="form_modal_label">Comment</label>
-
           <textarea
-            class="form_textarea form_input_style _error"
+            class="form_textarea form_input_style"
             name="comment"
             id="user-comment"
             rows="5"
@@ -428,16 +428,15 @@
             required
           ></textarea>
 
-          <!-- Умови конфіденційності -->
+          <!-- PRIVACY POLICY -->
           <div class="form_field checkbox_field">
             <input
               type="checkbox"
               name="policy"
               id="privacy-policy"
-              class="checkbox_input _req"
+              class="checkbox_input"
               required
             />
-
             <label for="privacy-policy" class="checkbox_label">
               <span>
                 I agree to the
@@ -448,7 +447,7 @@
             </label>
           </div>
 
-          <!-- Альтернативний спосіб зв'язку -->
+          <!-- CALL PHONE -->
           <div class="callback_option">
             <p class="callback_text">Or call us</p>
 
@@ -457,7 +456,7 @@
             </a>
           </div>
 
-          <!-- Кнопка -->
+          <!-- BUTTON -->
           <input
             class="form_submit_btn"
             type="submit"
