@@ -41,7 +41,7 @@ html,
 body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* Блокує горизонтальний скрол на рівні вікна */
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -65,18 +65,11 @@ body {
   color: var(--text-primary);
 }
 
-/* ------------------- GLOBAL ------------------- */
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: var(--main-familly);
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-}
+/* ------------------- GLOBAL ------------------- */
 
 main {
   flex: 1;

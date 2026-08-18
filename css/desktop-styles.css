@@ -1,5 +1,6 @@
-/* ------------------------------GLOBAL------------------------------- */
-@media screen and (min-width: 768px) {
+/* ------------------------------ GLOBAL ------------------------------- */
+
+@media screen and (min-width: 1158px) {
   .site-wrapper {
     max-width: 1158px;
     margin: 12px auto;
@@ -7,28 +8,43 @@
     box-shadow:
       inset 0 0 15px rgba(212, 175, 55, 0.08),
       0 0 20px rgba(0, 0, 0, 0.6);
-    padding: 12px 12px;
+    padding: 12px;
     box-sizing: border-box;
   }
 
   .container,
   .hero_con {
-    max-width: 768px;
+    max-width: 1158px;
     margin: 0 auto;
+    padding: 0 15px;
   }
 
-  /* HEADER */
+  .hero_con {
+    padding: 0;
+  }
+
+  /* ------------------------------ HEADER ------------------------------- */
+
   .header {
     border: none;
+    margin-top: 8px;
   }
 
   .header_con {
     margin-top: 6px;
   }
 
+  .header > .header_con {
+    margin-bottom: 24px;
+  }
+
   .nav_list,
   .touch_btn {
     display: flex;
+  }
+
+  .nav_list {
+    gap: 24px;
   }
 
   .touch_btn {
@@ -38,14 +54,10 @@
     color: var(--gold-hover);
   }
 
-  .nav_list {
-    gap: 8px;
-  }
-
   .nav_item_link {
     position: relative;
     display: inline-block;
-    padding: 4px 8px;
+    padding: 8px 16px;
   }
 
   .nav_item_link:hover,
@@ -76,52 +88,54 @@
     display: none;
   }
 
-  /* MOBILE MENU */
+  /* ------------------------------ MOBILE MENU ------------------------------- */
+
   .mobile_menu {
     display: none;
   }
 
-  /* =========================================
-   SLIDER
-  ========================================= */
+  /* ------------------------------ HERO SLIDER ------------------------------- */
+
   .comparison {
     width: 100%;
-    max-width: 900px;
-    aspect-ratio: 4 / 2;
+    max-width: none;
+    aspect-ratio: 16 / 9;
   }
 
   /* LABELS */
+
   .comparison__label {
-    top: 20px;
-    padding: 7px 11px;
-    font-size: 11px;
-    letter-spacing: 1.2px;
+    top: 27px;
+    padding: 8px 13px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
   }
 
   .comparison__label--before {
-    left: 16px;
+    left: 20px;
   }
 
   .comparison__label--after {
-    right: 16px;
+    right: 20px;
   }
 
   /* LINE */
+
   .comparison__line {
-    width: 2px;
+    width: 3px;
   }
 
   /* HANDLE */
+
   .comparison__handle {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
   }
 
-  /* ARROWS */
   .comparison__handle::before,
   .comparison__handle::after {
-    width: 14px;
-    height: 25px;
+    width: 16px;
+    height: 28px;
   }
 
   .comparison__handle::before {
@@ -133,22 +147,25 @@
   }
 
   /* HERO LOGO */
+
   .comparions_wrapper_icon {
-    width: 82px;
-    height: 82px;
+    width: 100px;
+    height: 100px;
   }
 
-  /* MODAL */
+  /* ------------------------------ MODAL ------------------------------- */
+
   .modal {
     width: 768px;
   }
 
   .modal_close_btn {
-    top: 5px;
-    right: 3vw;
+    top: 3px;
+    right: 0;
   }
 
-  /* Enhance section */
+  /* ------------------------------ ENHANCE SECTION ------------------------------- */
+
   .enhance_list {
     flex-direction: row;
     justify-content: space-around;
@@ -157,6 +174,7 @@
 
   .enhance_item {
     padding: 24px;
+    gap: 24px;
     border-bottom: none;
     border-right: 2px solid;
   }
@@ -165,7 +183,13 @@
     padding: 24px;
   }
 
-  /* Why Us section */
+  .enhance_svg {
+    width: 128px;
+    height: 128px;
+  }
+
+  /* ------------------------------ WHY US SECTION ------------------------------- */
+
   .whyUs_con_wrap {
     gap: 12px;
   }
@@ -189,7 +213,7 @@
   .whyUs_item {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 12px;
     min-width: 0;
   }
 
@@ -204,13 +228,15 @@
     margin: 0;
     overflow-wrap: break-word;
     word-break: normal;
+    font-size: 24px;
   }
 
   .card {
     padding: 12px 24px;
   }
 
-  /* FOOTER */
+  /* ------------------------------ FOOTER ------------------------------- */
+
   .footer_list {
     display: flex;
     flex-direction: row;
@@ -241,9 +267,11 @@
     border-bottom: 1px solid;
   }
 
-  /* PRIVACY MODAL */
+  /* ------------------------------ PRIVACY MODAL ------------------------------- */
+
   .privacy_modal {
     width: calc(100% - 48px);
+    max-width: 1000px;
     padding: 32px 48px;
   }
 
@@ -254,108 +282,5 @@
   .privacy_close_btn {
     top: 24px;
     right: 24px;
-  }
-}
-
-/* ------------------------------DESKTOP (1158px+)------------------------------- */
-@media screen and (min-width: 1158px) {
-  /* HEADER  */
-  .header {
-    margin-top: 8px;
-  }
-
-  .nav_list {
-    gap: 24px;
-  }
-
-  .nav_item_link {
-    padding: 8px 16px;
-  }
-
-  .header > .header_con {
-    margin-bottom: 24px;
-  }
-
-  /* HERO SECTION */
-
-  .container,
-  .hero_con {
-    max-width: 1158px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  .hero_con {
-    padding: 0;
-  }
-
-  /* HERO SLIDER */
-
-  .comparison {
-    max-width: none;
-    aspect-ratio: 16 / 9;
-  }
-
-  .comparison__label {
-    top: 27px;
-    padding: 8px 13px;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-  }
-
-  .comparison__label--before {
-    left: 20px;
-  }
-
-  .comparison__label--after {
-    right: 20px;
-  }
-
-  .comparison__line {
-    width: 3px;
-  }
-
-  .comparison__handle {
-    width: 56px;
-    height: 56px;
-  }
-
-  .comparison__handle::before,
-  .comparison__handle::after {
-    width: 16px;
-    height: 28px;
-  }
-
-  .comparions_wrapper_icon {
-    width: 100px;
-    height: 100px;
-  }
-
-  /* ENCHANCE SECTION */
-
-  .enhance_item {
-    gap: 24px;
-  }
-
-  .enhance_svg {
-    width: 128px;
-    height: 128px;
-  }
-
-  .whyUs_item {
-    gap: 12px;
-  }
-
-  .whyUs_text {
-    font-size: 24px;
-  }
-
-  .modal_close_btn {
-    top: 3px;
-    right: 0vw;
-  }
-
-  .privacy_modal {
-    max-width: 1000px;
   }
 }
