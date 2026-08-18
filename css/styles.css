@@ -52,7 +52,7 @@ body {
   flex-direction: column;
   min-height: 100dvh;
   background-color: var(--background);
-  background-image: 
+  background-image:
     radial-gradient(
       ellipse at center,
       rgba(14, 45, 29, 0.4) 0%,
@@ -703,6 +703,12 @@ ul {
   width: 18px;
   height: 18px;
   fill: var(--gold-hover);
+}
+
+.copyright {
+  font-size: clamp(0.75rem, 0.705rem + 0.227vw, 0.875rem);
+  text-align: center;
+  color: var(--text-primary);
 }
 
 /* MODAL */
