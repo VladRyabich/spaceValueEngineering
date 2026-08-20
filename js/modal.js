@@ -1,6 +1,6 @@
 (() => {
   const refs = {
-    openModalBtn: document.querySelector("[data-modal-open]"),
+    openModalBtns: document.querySelectorAll("[data-modal-open]"),
     mobileEmail: document.querySelector("[data-mobile-modal]"),
     closeModalBtn: document.querySelector("[data-modal-close]"),
     modal: document.querySelector("[data-modal]"),
@@ -8,9 +8,11 @@
     form: document.querySelector("#form"),
   };
 
-  // Кнопка відкриття модалки на планшеті та ПК
-  if (refs.openModalBtn) {
-    refs.openModalBtn.addEventListener("click", toggleModal);
+  // Кнопки відкриття модалки на планшеті та ПК
+  if (refs.openModalBtns.length) {
+    refs.openModalBtns.forEach((btn) => {
+      btn.addEventListener("click", toggleModal);
+    });
   }
 
   // Email на мобільному
@@ -47,7 +49,7 @@
     // Якщо поле порожнє
     if (!digits) return "";
 
-    // Якщо перша цифра 1 (код країни), видаляємо її для обробки суто 10 цифр
+    // Якщо перша цифра 1 (код країни), видаляємо її
     if (digits.startsWith("1")) {
       digits = digits.substring(1);
     }
@@ -62,9 +64,11 @@
     if (digits.length <= 3) {
       return `+1 (${digits}`;
     }
+
     if (digits.length <= 6) {
       return `+1 (${digits.slice(0, 3)}) ${digits.slice(3)}`;
     }
+
     return `+1 (${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
   }
 

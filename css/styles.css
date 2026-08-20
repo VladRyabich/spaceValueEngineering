@@ -648,7 +648,7 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .iframe_map {
@@ -684,6 +684,14 @@ ul {
   gap: 8px;
 }
 
+.footer_btn {
+  padding: 8px 16px;
+  display: flex;
+  border: 2px solid var(--gold-hover);
+  background-color: unset;
+  color: var(--gold-hover);
+}
+
 .footer_item_subtitle {
   font-style: normal;
 }
@@ -709,6 +717,7 @@ ul {
   font-size: clamp(0.75rem, 0.705rem + 0.227vw, 0.875rem);
   text-align: center;
   color: var(--text-primary);
+  margin-bottom: 12px;
 }
 
 /* MODAL */
